@@ -1,14 +1,14 @@
 export const HomeHeader = () => {
     return (
-        <div className="flex flex-col bg-white/70 backdrop-blur-lg rounded-2xl p-6 sm:p-10 shadow-xl max-w-6xl mx-auto">
+        <div className="flex flex-col bg-white/70 backdrop-blur-lg rounded-2xl p-6 sm:p-10 shadow-xl mx-auto">
             {/* Contenedor principal */}
-            <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-center gap-6">
+            <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-15">
                 {/* Imagen y descripción corta */}
-                <div className="flex flex-col items-center w-full md:w-1/3">
+                <div className="flex flex-col items-center">
                     <img
                         src="https://avatars.githubusercontent.com/u/11049338?v=4"
                         alt="Freddy Vilches (Yiyeh)"
-                        className="w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 rounded-full mb-4 shadow-2xl ring-4 ring-blue-300 hover:ring-blue-400 transition-all duration-300"
+                        className="w-32 h-32 lg:w-48 lg:h-48 md:w-32 md:h-32 rounded-full mb-4 shadow-2xl ring-4 ring-blue-300 hover:ring-blue-400 transition-all duration-300"
                     />
                     <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-gray-600 mb-2">
                         Yiyeh
@@ -75,7 +75,7 @@ export const HomeHeader = () => {
 
 
                 {/* Texto de bienvenida */}
-                <div className="w-full md:w-2/3 text-center md:text-left">
+                <div className="max-w-2xl text-center md:text-left">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-600 mb-4 leading-tight">
                         ¡Hola! Soy <span className="text-blue-400">Freddy Vilches</span>
                     </h1>
@@ -108,7 +108,7 @@ export const HomeHeader = () => {
             </div>
 
             {/* Botones */}
-            <div className="flex flex-col sm:flex-row justify-center sm:justify-end gap-4 mt-6">
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-center md:justify-end gap-4 mt-6">
                 <a
                     href="#projects"
                     className="px-6 py-3 sm:px-8 sm:py-4 bg-blue-100 text-blue-600 font-semibold text-base sm:text-lg rounded-lg shadow-md hover:bg-blue-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center"

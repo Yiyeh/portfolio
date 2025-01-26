@@ -3,7 +3,7 @@ import { TechBadge } from "../shared/TechSkill";
 export const SkillsAndPersonal = () => {
   return (
 
-    <div id="sobre-mi" className="max-w-full my-12 mx-auto px-6 py-12 bg-gradient-to-br from-indigo-50 via-white to-sky-50 rounded-2xl p-8 shadow-xl border border-gray-200">
+    <div id="sobre-mi" className="my-12 mx-auto px-6 py-12 bg-gradient-to-br from-indigo-50 via-white to-sky-50 rounded-2xl p-8 shadow-xl border border-gray-200">
       {/* Habilidades Personales y Técnicas */}
       <aside className="flex flex-col">
         

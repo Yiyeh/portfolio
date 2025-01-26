@@ -2,7 +2,7 @@ import { TechBadge } from "./TechSkill";
 
 interface Props {
   title: string;
-  src: string;
+  src?: string;
   info: string;
   link?: string;
   linkName?: string;
@@ -11,7 +11,7 @@ interface Props {
   tech: string[];
 }
 
-export const ProjectCard = ({ title, src, info, link, linkName, githubLink, githubName, tech: text }: Props) => {
+export const ProjectCard = ({ title, src = "/img/github.jpg", info, link, linkName, githubLink, githubName, tech: text }: Props) => {
   return (
     <div className="p-6 shadow-lg shadow-violet-200 rounded-xl bg-white transition-transform transform hover:scale-102 hover:shadow-xl  flex flex-col">
       {/* Título */}
@@ -20,9 +20,11 @@ export const ProjectCard = ({ title, src, info, link, linkName, githubLink, gith
       <div className="flex gap-12">
 
         {/* Imagen */}
-        <div className="rounded-lg overflow-hidden mb-4 shadow-md hidden sm:block">
+        <div className="rounded-lg overflow-hidden mb-4 shadow-md hidden md:block">
+        
+          
           <img
-            className="w-full h-48 object-cover hover:opacity-90 transition-opacity  "
+            className="w-full md:w-150 md:h-48 lg:h-48 object-cover hover:opacity-90 transition-opacity  "
             src={src}
             alt={title}
           />
@@ -31,7 +33,7 @@ export const ProjectCard = ({ title, src, info, link, linkName, githubLink, gith
         {/* Descripción */}
         <div className="flex flex-col justify-between">
 
-          <p className="md:w-150 text-md text-gray-600 px-4 mb-4 text-justify">{info}</p>
+          <p className=" md:w-100 lg:w-150 text-md text-gray-600 px-4 mb-4 text-justify">{info}</p>
 
           <div className="flex flex-col items-end justify-start">
 
