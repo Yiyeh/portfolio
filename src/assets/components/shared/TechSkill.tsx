@@ -8,7 +8,7 @@ export const TechBadge = ({ tech: text }: Props) => {
       bgColor: string;
       textColor: string;
       logo: string;
-      url: string; // Agregamos el enlace oficial
+      url: string; 
     };
   } = {
     Javascript: {
@@ -94,6 +94,12 @@ export const TechBadge = ({ tech: text }: Props) => {
       textColor: "text-teal-600",
       logo: "https://raw.githubusercontent.com/devicons/devicon/6910f0503efdd315c8f9b858234310c06e04d9c0/icons/tailwindcss/tailwindcss-original.svg",
       url: "https://tailwindcss.com/",
+    },
+    "TypeScript": {
+      bgColor: "bg-blue-100",
+      textColor: "text-blue-600",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      url: "https://www.typescriptlang.org/",
     },
     React: {
       bgColor: "bg-blue-100",

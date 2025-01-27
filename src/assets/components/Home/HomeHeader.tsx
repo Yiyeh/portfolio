@@ -2,7 +2,7 @@ export const HomeHeader = () => {
     return (
         <div className="flex flex-col bg-white/70 backdrop-blur-lg rounded-2xl p-6 sm:p-10 shadow-xl mx-auto">
             {/* Contenedor principal */}
-            <div className="flex flex-col md:flex-row items-center md:items-start justify-center gap-15">
+            <div className="flex flex-col-reverse md:flex-row items-center md:items-start justify-center sm:gap-2 lg:gap-15">
                 {/* Imagen y descripción corta */}
                 <div className="flex flex-col items-center">
                     <img
@@ -30,7 +30,7 @@ export const HomeHeader = () => {
                         />
                     </p>
                     <div className="flex flex-col mt-4  text-center text-gray-600 gap-2 ">
-                        <a href="https://twitter.com/_Yiyeh" className="text-blue-600 hover:text-blue-600">
+                        <a href="https://twitter.com/_Yiyeh" className="text-blue-600 hover:text-blue-600 transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-pointer">
                             <p className="flex items-center justify-center gap-2 bg-blue-100 px-4 py-2 rounded">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ export const HomeHeader = () => {
                                 _Yiyeh
                             </p>
                         </a>
-                        <a href="https://github.com/Yiyeh" className="text-gray-600 hover:text-gray-700">
+                        <a href="https://github.com/Yiyeh" className="text-gray-600 hover:text-gray-700 transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-pointer">
                             <p className="flex items-center justify-center gap-2 bg-gray-100 px-4 py-2 rounded">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -56,7 +56,7 @@ export const HomeHeader = () => {
                                 Yiyeh
                             </p>
                         </a>
-                        <a href="mailto:Yiyehdev@gmail.com" className="text-yellow-600 hover:text-yellow-700">
+                        <a href="mailto:Yiyehdev@gmail.com" className="text-yellow-600 hover:text-yellow-700 transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-pointer">
                             <p className="flex items-center justify-center gap-2 bg-yellow-100 px-4 py-2 rounded">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"

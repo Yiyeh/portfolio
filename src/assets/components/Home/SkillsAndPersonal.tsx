@@ -51,6 +51,7 @@ export const SkillsAndPersonal = () => {
             <TechBadge tech="MYSQL" />
             <TechBadge tech="GIT" />
             <TechBadge tech="Tailwind CSS" />
+            <TechBadge tech="TypeScript" />
             <TechBadge tech="React" />
           </div>
           <p className="text-xs text-gray-600 mt-6">* Al clickear sobre alguna tecnología de desarrollo, te redirigirá al sitio oficial de la tecnología.</p>
