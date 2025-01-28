@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-export const NavBar = () => {
+export const NavBarBlog = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -43,11 +43,8 @@ export const NavBar = () => {
             isOpen ? "block" : "hidden"
           } absolute top-16 left-0 w-full bg-white shadow-md md:static md:flex justify-end md:space-x-2 md:bg-transparent md:shadow-none`}
         >
-          <NavBarItem title="Inicio" path="#home" toggleMenu={toggleMenu} />
-          <NavBarItem title="Sobre mí" path="#sobre-mi" toggleMenu={toggleMenu} />
-          <NavBarItem title="Proyectos" path="#projects" toggleMenu={toggleMenu} />
-          <NavBarItem title="Contacto" path="#footer" toggleMenu={toggleMenu} />
-          <div className="bg-blue-200 hover:bg-blue-300 rounded-2xl"><NavBarItem title="Blog" path="/blog" toggleMenu={toggleMenu} /></div>
+          <NavBarItem title="Inicio" path="/" toggleMenu={toggleMenu} />
+
         </ul>
       </div>
     </nav>

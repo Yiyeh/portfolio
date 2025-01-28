@@ -5,6 +5,7 @@ import { Projects } from "../assets/components/Home/Projects";
 import { Footer } from "../assets/components/shared/Footer";
 
 export const Home = () => {
+
   return (
     <>
       <NavBar />
