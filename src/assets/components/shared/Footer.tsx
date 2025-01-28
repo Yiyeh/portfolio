@@ -5,28 +5,34 @@ export const Footer = () => {
         {/* Contenido principal */}
         <div className="flex flex-col md:flex-row items-center justify-between">
           {/* Logo o Nombre */}
-          <div className="text-2xl text-gray-500 font-bold tracking-wide mb-4 md:mb-0">
+          <div className="text-2xl text-blue-400 font-bold tracking-wide mb-4 md:mb-0">
             YiyehDev
           </div>
           {/* Enlaces de navegación */}
           <div className="flex space-x-6">
             <a
               href="#sobre-mi"
-              className="text-gray-500 font-bold hover:text-blue-800 transition"
+              className="text-blue-400 font-bold hover:text-blue-800 transition"
             >
               Sobre mí
             </a>
             <a
               href="#projects"
-              className="text-gray-500 font-bold hover:text-blue-800 transition"
+              className="text-blue-400 font-bold hover:text-blue-800 transition"
             >
               Proyectos
             </a>
             <a
               href="#contact"
-              className="text-gray-500 font-bold hover:text-blue-800 transition"
+              className="text-blue-400 font-bold hover:text-blue-800 transition"
             >
               Contacto
+            </a>
+            <a
+              href="/blog"
+              className="text-blue-400 font-bold hover:text-blue-800 transition"
+            >
+              Blog
             </a>
           </div>
         </div>
@@ -34,7 +40,7 @@ export const Footer = () => {
         <hr className="my-6 border-blue-200" />
         {/* Derechos reservados */}
         <div className="flex flex-col md:flex-row items-center justify-between">
-          <p className="text-sm text-gray-500 font-bold  mb-4 md:mb-0">
+          <p className="text-sm text-blue-400 font-bold  mb-4 md:mb-0">
              {new Date().getFullYear()} YiyehDev.
           </p>
           {/* Redes sociales */}
@@ -43,7 +49,7 @@ export const Footer = () => {
               href="https://twitter.com/_Yiyeh"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 font-bold hover:text-blue-800 transition"
+              className="text-blue-400 font-bold hover:text-blue-800 transition"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +64,7 @@ export const Footer = () => {
               href="https://github.com/Yiyeh"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-500 font-bold hover:text-blue-800 transition"
+              className="text-blue-400 font-bold hover:text-blue-800 transition"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +77,7 @@ export const Footer = () => {
             </a>
             <a
               href="mailto:YiyehDev@gmail.com"
-              className="text-gray-500 font-bold hover:text-blue-800 transition"
+              className="text-blue-400 font-bold hover:text-blue-800 transition"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

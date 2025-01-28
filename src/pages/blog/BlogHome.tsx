@@ -3,7 +3,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../../firebaseConfig";
 import { NavBarBlog } from "../../assets/components/shared/NavBarBlog";
 import { FooterBlog } from "../../assets/components/shared/FooterBlog";
-import { BlogLoading } from "../../assets/components/Blog/BlogLoading";
+
 
 // Define el tipo para un post
 interface Post {
@@ -48,8 +48,8 @@ export default function BlogHome() {
             <div className="flex-grow">
 
             <div className="max-w-5xl mx-auto py-20 px-4 mt-10">
-                <h1 className="bg-white shadow-lg px-8 py-6 text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-blue-400 rounded-xl mb-8">
-                    YiyehDev - Blog
+                <h1 className="bg-white shadow-lg px-8 py-6 text-3xl sm:text-4xl md:text-4xl font-extrabold text-center text-blue-400 rounded-xl mb-8">
+                    YiyehDev - Blog ( En Constuccion )
                 </h1>
                 {posts.length === 0 ? (
                     <>

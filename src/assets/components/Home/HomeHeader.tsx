@@ -31,7 +31,7 @@ export const HomeHeader = () => {
                     </p>
                     <div className="flex flex-col mt-4  text-center text-gray-600 gap-2 ">
                         <a href="https://twitter.com/_Yiyeh" className="text-blue-600 hover:text-blue-600 transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-pointer">
-                            <p className="flex items-center justify-center gap-2 bg-blue-100 px-4 py-2 rounded">
+                            <p className="flex items-center justify-center gap-2 bg-blue-100 px-4 py-2 rounded font-bold">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="currentColor"
@@ -44,7 +44,7 @@ export const HomeHeader = () => {
                             </p>
                         </a>
                         <a href="https://github.com/Yiyeh" className="text-gray-600 hover:text-gray-700 transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-pointer">
-                            <p className="flex items-center justify-center gap-2 bg-gray-100 px-4 py-2 rounded">
+                            <p className="flex items-center justify-center gap-2 bg-gray-100 px-4 py-2 rounded font-bold">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="currentColor"
@@ -57,7 +57,7 @@ export const HomeHeader = () => {
                             </p>
                         </a>
                         <a href="mailto:Yiyehdev@gmail.com" className="text-yellow-600 hover:text-yellow-700 transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-pointer">
-                            <p className="flex items-center justify-center gap-2 bg-yellow-100 px-4 py-2 rounded">
+                            <p className="flex items-center justify-center gap-2 bg-yellow-100 px-4 py-2 rounded font-bold">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="currentColor"
@@ -108,7 +108,13 @@ export const HomeHeader = () => {
             </div>
 
             {/* Botones */}
-            <div className="flex flex-col sm:flex-row justify-center sm:justify-center md:justify-end gap-4 mt-6">
+            <div className="flex flex-col sm:flex-row justify-center sm:justify-center md:justify-end gap-4 mt-6 items-center">
+                <a
+                    href="/blog"
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-green-100 text-green-600 font-semibold text-base sm:text-lg rounded-lg shadow-md hover:bg-green-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center"
+                >
+                    Visita mi Blog
+                </a>
                 <a
                     href="#projects"
                     className="px-6 py-3 sm:px-8 sm:py-4 bg-blue-100 text-blue-600 font-semibold text-base sm:text-lg rounded-lg shadow-md hover:bg-blue-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center"

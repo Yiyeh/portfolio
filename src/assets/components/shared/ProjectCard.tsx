@@ -33,7 +33,7 @@ export const ProjectCard = ({ title, src = "/img/github.jpg", info, link, linkNa
         {/* Descripción */}
         <div className="flex flex-col justify-between">
 
-          <p className=" md:w-100 lg:w-150 text-md text-gray-600 px-4 mb-4 text-justify">{info}</p>
+          <p className=" md:w-100 lg:w-150 text-md text-gray-600 pr-4 mb-4 text-justify">{info}</p>
 
           <div className="flex flex-col items-end justify-start">
 

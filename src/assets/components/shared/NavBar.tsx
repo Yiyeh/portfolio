@@ -12,7 +12,7 @@ export const NavBar = () => {
     <nav className="fixed top-0 left-0 w-full p-4 bg-gradient-to-br from-indigo-50 via-white to-sky-50 shadow-md z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="text-gray-600 font-bold transition text-2xl">
+        <div className="text-blue-400 font-bold transition text-2xl">
           YiyehDev
         </div>
 
@@ -47,7 +47,8 @@ export const NavBar = () => {
           <NavBarItem title="Sobre mí" path="#sobre-mi" toggleMenu={toggleMenu} />
           <NavBarItem title="Proyectos" path="#projects" toggleMenu={toggleMenu} />
           <NavBarItem title="Contacto" path="#footer" toggleMenu={toggleMenu} />
-          <div className="bg-blue-200 hover:bg-blue-300 rounded-2xl"><NavBarItem title="Blog" path="/blog" toggleMenu={toggleMenu} /></div>
+          <NavBarItem title="Blog" path="/blog" toggleMenu={toggleMenu} />
+          
         </ul>
       </div>
     </nav>
@@ -74,12 +75,12 @@ export const NavBarItem = ({ title, path, toggleMenu }: NavBarItemProps) => {
   };
 
   return (
-    <li className="md:ml- ">
+    <li className=" ">
       {path.startsWith("#") ? (
         <a
           href={path}
           onClick={handleScroll}
-          className="block px-4 py-2 text-gray-600 hover:text-gray-800 md:inline-block md:px-2"
+          className="block px-4 py-2 font-bold text-blue-400 hover:text-blue-600 md:inline-block md:px-2"
         >
           {title}
         </a>
@@ -88,7 +89,7 @@ export const NavBarItem = ({ title, path, toggleMenu }: NavBarItemProps) => {
           to={path}
           onClick={toggleMenu}
           className={({ isActive }) =>
-            `block px-4 py-2 text-gray-600 hover:text-gray-800 md:inline-block md:px-2 ${
+            `block px-4 py-2 text-blue-400 hover:blue-gray-600 md:inline-block md:px-2 font-bold ${
               isActive ? "font-bold text-blue-600" : ""
             }`
           }

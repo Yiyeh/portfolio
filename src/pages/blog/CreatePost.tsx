@@ -16,7 +16,7 @@ function CreatePost() {
       .map((tag) => tag.trim()) // Elimina espacios en blanco
       .filter((tag) => tag !== ""); // Filtra etiquetas vacías
 
-    if (!auth.currentUser && (auth.currentUser.uid != "WUPVs75DIjacSpW8QXZ0VAbOqi32")) {
+    if (!auth.currentUser ) {
       alert("Debes iniciar sesión para publicar.");
       return;
     }
