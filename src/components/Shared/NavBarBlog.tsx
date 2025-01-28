@@ -1,11 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import { onAuthStateChanged, getAuth, signOut } from "firebase/auth";
 
 export const NavBarBlog = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false); // Estado para la autenticación
+  const auth = getAuth();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setIsAuthenticated(!!user); // Si hay un usuario, está autenticado
+    });
+
+    // Limpiar el listener al desmontar el componente
+    return () => unsubscribe();
+  }, [auth]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      setIsAuthenticated(false); // Actualizar el estado después de cerrar sesión
+    } catch (error) {
+      console.error("Error al cerrar sesión:", error);
+    }
   };
 
   return (
@@ -16,7 +37,7 @@ export const NavBarBlog = () => {
           YiyehDev
         </div>
 
-        {/* Hamburger Button (Visible in mobile) */}
+        {/* Botón hamburguesa (Visible en móviles) */}
         <button
           className="text-gray-600 md:hidden focus:outline-none"
           onClick={toggleMenu}
@@ -37,14 +58,26 @@ export const NavBarBlog = () => {
           </svg>
         </button>
 
-        {/* Links */}
+        {/* Enlaces */}
         <ul
           className={`${
             isOpen ? "block" : "hidden"
-          } absolute top-16 left-0 w-full bg-white shadow-md md:static md:flex justify-end md:space-x-2 md:bg-transparent md:shadow-none`}
+          } absolute top-16 left-0 w-full bg-white shadow-md md:static md:flex justify-end md:space-x-4 md:bg-transparent md:shadow-none`}
         >
           <NavBarItem title="Inicio" path="/" toggleMenu={toggleMenu} />
-
+          {isAuthenticated ? (
+            <>
+              <NavBarItem title="Dashboard" path="/admin/dashboard" toggleMenu={toggleMenu} />
+              <button
+                onClick={handleLogout}
+                className="block px-4 py-2 text-red-500 hover:text-red-600 font-bold md:inline-block md:px-2"
+              >
+                Cerrar sesión
+              </button>
+            </>
+          ) : (
+            <NavBarItem title="Login" path="/login" toggleMenu={toggleMenu} />
+          )}
         </ul>
       </div>
     </nav>
@@ -71,7 +104,7 @@ export const NavBarItem = ({ title, path, toggleMenu }: NavBarItemProps) => {
   };
 
   return (
-    <li className="md:ml- ">
+    <li className="md:ml-2">
       {path.startsWith("#") ? (
         <a
           href={path}

@@ -1,4 +1,4 @@
-import { ProjectCard } from "../shared/ProjectCard"
+import { ProjectCard } from "../Shared/ProjectCard"
 
 export const Projects = () => {
   return (

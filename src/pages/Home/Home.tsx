@@ -1,8 +1,9 @@
-import { NavBar } from "../assets/components/shared/NavBar";
-import { HomeHeader } from "../assets/components/Home/HomeHeader";
-import { SkillsAndPersonal } from "../assets/components/Home/SkillsAndPersonal";
-import { Projects } from "../assets/components/Home/Projects";
-import { Footer } from "../assets/components/shared/Footer";
+import { NavBar } from "../../components/Shared/NavBar";
+import { HomeHeader } from "../../components/Home/HomeHeader";
+import { SkillsAndPersonal } from "../../components/Home/SkillsAndPersonal";
+import { Projects } from "../../components/Home/Projects";
+import { Footer } from "../../components/Shared/Footer";
+
 
 export const Home = () => {
 

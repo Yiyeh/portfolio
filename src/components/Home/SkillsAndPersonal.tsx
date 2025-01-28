@@ -1,4 +1,4 @@
-import { TechBadge } from "../shared/TechSkill";
+import { TechBadge } from "../Shared/TechSkill";
 
 export const SkillsAndPersonal = () => {
   return (
