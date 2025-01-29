@@ -1,7 +1,7 @@
 {
     "navBar": {
         "home": "Home",
-        "about": "About",
+        "about": "About Me",
         "projects": "Projects",
         "contact": "Contact",
         "blog": "Blog"
@@ -9,7 +9,8 @@
         
     "homeHeader": {
         "greeting": "Hello! I'm ",
-        "description": "Higher-level IT technician passionate about programming and web development. My goal is to become a {role} and work on exciting projects.",
+        "description": "Higher-level IT technician passionate about programming and web development. My goal is to become a ",
+        "description2": "and work on exciting projects.",
         "roles": {
             "fullStackDeveloper": "Full Stack Developer"
         },
@@ -94,5 +95,18 @@
         "projects": "Projects",
         "contact": "Contact",
         "blog": "Blog"
+    },
+    "contact": {
+        "title": "Send me a message",
+        "content": "If you have any questions or want to work together, please fill out the form below and I will get back to you as soon as possible.",
+        "name": "Name",
+        "namePlaceholder": "Write your name",
+        "email": "Email",
+        "emailPlaceholder": "Write your email",
+        "message": "Message",
+        "messagePlaceholder": "Write your message",
+        "send": "Send Message",
+        "successMessage": "Message sent successfully"
+
     }
 }

@@ -15,7 +15,7 @@ interface Post {
     createdAt: Date;
 }
 
-export const AdminDashboard = () => {
+export const AdminPosts = () => {
     const [posts, setPosts] = useState<Post[]>([]);
 
     useEffect(() => {

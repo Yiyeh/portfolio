@@ -50,13 +50,9 @@ export const CreatePost = () => {
     <AsideAdmin />
 
     <div className="flex flex-col w-full p-8 lg:p-20 gap-6">
-      {/* Encabezado */}
-      <div className="w-full bg-white/70 backdrop-blur-lg flex justify-between items-center rounded-2xl p-4 shadow-md">
-        <h1 className="text-2xl font-bold text-blue-400">Publicaciones</h1>
-      </div>
 
       {/* Contenedor del formulario */}
-      <div className="flex flex-col items-center justify-center w-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl shadow-md py-12 px-6">
+      <div className="flex flex-col items-center justify-center w-full bg-white/70 rounded-2xl shadow-md py-30 px-6">
         <form
           onSubmit={handleSubmit}
           className="w-full max-w-3xl bg-white p-8 rounded-lg shadow-lg space-y-6"

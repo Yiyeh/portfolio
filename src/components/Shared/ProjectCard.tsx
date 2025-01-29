@@ -15,7 +15,7 @@ export const ProjectCard = ({ title, src = "/img/github.jpg", info, link, linkNa
   return (
     <div className="p-6 shadow-lg shadow-violet-200 rounded-xl bg-white transition-transform transform hover:scale-102 hover:shadow-xl  flex flex-col">
       {/* Título */}
-      <h2 className="text-3xl font-extrabold text-gray-600 mb-6 ">{title}</h2>
+      <h2 className="text-3xl font-extrabold text-blue-400 mb-6 ">{title}</h2>
 
       <div className="flex gap-12">
 

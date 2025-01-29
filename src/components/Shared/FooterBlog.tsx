@@ -70,7 +70,7 @@ export const FooterBlog = () => {
               </svg>
             </a>
             <a
-              href="mailto:YiyehDev@gmail.com"
+              href="/#contact"
               className="text-blue-400 font-bold hover:text-blue-800 transition"
             >
               <svg

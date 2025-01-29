@@ -27,7 +27,7 @@ export const SkillsAndPersonal = () => {
         {/* Habilidades Personales */}
         <div className="mb-12">
           <h2 className="text-3xl font-extrabold text-blue-400 mb-6"> {t("skillsAndPersonal.personalSkills.title")}</h2>
-          <p className="text-md text-gray-700 mb-6 text-justify">
+          <p className="text-md text-gray-700 mb-6 text-justify px-4">
             {t("skillsAndPersonal.personalSkills.description")}
           </p>
           <ul className="flex flex-wrap justify-center gap-3">

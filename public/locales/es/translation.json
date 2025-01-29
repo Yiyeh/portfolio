@@ -9,7 +9,8 @@
         
     "homeHeader": {
         "greeting": "¡Hola! Soy ",
-        "description": "Técnico nivel superior en Informática apasionado por la programación y desarrollo web. Mi meta es convertirme en un {role} y trabajar en proyectos emocionantes.",
+        "description": "Técnico nivel superior en Informática apasionado por la programación y desarrollo web. Mi meta es convertirme en un  ",
+        "description2": "y trabajar en proyectos emocionantes.",
         "roles": {
             "fullStackDeveloper": "Full Stack Developer"
         },
@@ -87,5 +88,17 @@
             "title": "Yes No Maybe App",
             "description": "Una aplicación tipo chat creada para practicar Flutter, donde al enviar un mensaje que termina en '?' la app responde simulando a la otra persona, acompañando la respuesta con un GIF que corresponde a 'Sí', 'No' o 'Quizás'."
         }
+    },
+    "contact": {
+        "title": "Enviame un mensaje",
+        "content": "Si tienes alguna pregunta o quieres trabajar juntos, rellena este formulario y te contactaré lo antes posible.",
+        "name": "Nombre",
+        "namePlaceholder": "Escribe tu nombre",
+        "email": "Correo electrónico",
+        "emailPlaceholder": "Escribe tu correo",
+        "message": "Mensaje",
+        "messagePlaceholder": "Escriba su mensaje",
+        "send": "Enviar Mensaje",
+        "successMessage": "Mensaje enviado correctamente"
     }
 }

@@ -14,14 +14,14 @@ export const NavBar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full p-4 bg-gradient-to-br from-indigo-50 via-white to-sky-50 shadow-md z-50">
+    <nav className=" top-0 left-0 w-full p-4 bg-gradient-to-br from-indigo-50 via-white to-sky-50 shadow-md z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="text-blue-400 font-bold transition text-2xl ml-10 md:ml-">
+        <div className="text-blue-400 font-bold transition text-2xl ml-10 ">
           YiyehDev
         </div>
 
-        <div className="flex w-full items-center justify-start ml-20  ">
+        <div className="flex w-full items-center justify-center  ml-4">
           <LanguageSwitcher />
         </div>
 
@@ -49,12 +49,12 @@ export const NavBar = () => {
         {/* Links */}
         <ul
           className={`${isOpen ? "block" : "hidden"
-            } absolute top-16 left-0  bg-white shadow-md md:static md:flex justify-end md:space-x-2 md:bg-transparent md:shadow-none`}
+            } absolute top-16 left-0  bg-white shadow-md md:static md:flex justify-end md:space-x-2 md:bg-transparent md:shadow-none min-w-lg`}
         >
           <NavBarItem title={t("navBar.home")} path="#home" toggleMenu={toggleMenu} isOpen={isOpen} />
           <NavBarItem title={t("navBar.about")} path="#sobre-mi" toggleMenu={toggleMenu} isOpen={isOpen} />
           <NavBarItem title={t("navBar.projects")} path="#projects" toggleMenu={toggleMenu} isOpen={isOpen} />
-          <NavBarItem title={t("navBar.contact")} path="#footer" toggleMenu={toggleMenu} isOpen={isOpen} />
+          <NavBarItem title={t("navBar.contact")} path="#contact" toggleMenu={toggleMenu} isOpen={isOpen} />
           <NavBarItem title={t("navBar.blog")} path="/blog" toggleMenu={toggleMenu} isOpen={isOpen} />
         </ul>
       </div>
@@ -88,7 +88,7 @@ export const NavBarItem = ({ title, path, toggleMenu}: NavBarItemProps) => {
         <a
           href={path}
           onClick={handleScroll}
-          className="block px-4 py-2 font-bold text-blue-400 hover:text-blue-600 md:inline-block md:px-2 whitespace-nowrap"
+          className="block min-w-screen  md:min-w-0 justify-center px-4 py-2 font-bold text-blue-400 hover:text-blue-600 md:inline-block md:px-2 whitespace-nowrap"
         >
           {title}
         </a>
@@ -97,7 +97,7 @@ export const NavBarItem = ({ title, path, toggleMenu}: NavBarItemProps) => {
           to={path}
           onClick={toggleMenu}
           className={({ isActive }) =>
-            `block px-4 py-2 text-blue-400 hover:blue-gray-600 md:inline-block md:px-2 font-bold ${isActive ? "font-bold text-blue-600 whitespace-nowrap" : ""
+            `block min-w-screen md:min-w-0 px-4 py-2 text-blue-400 hover:blue-gray-600 md:inline-block md:px-2 font-bold ${isActive ? "font-bold text-blue-600 whitespace-nowrap" : ""
             }`
           }
         >

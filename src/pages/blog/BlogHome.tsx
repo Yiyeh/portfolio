@@ -73,11 +73,12 @@ export default function BlogHome() {
                         </p>
 
                         <p className="text-gray-700 text-sm max-w-2xl mb-4">
-                            * Esta parte del sitio está construida con React y Firebase.
+                            * Esta parte del sitio está construido con React para el frontend y Firebase con Google Authentication
+                            para el backend. *
                         </p>
 
-                        <p className="bg-red-100 rounded-2xl py-2 px-4 text-red-400 text-lg sm:text-xl max-w-2xl mb-4">
-                        ⚠️ Blog en construcción ⚠️
+                        <p className="bg-yellow-100 rounded-2xl py-2 px-4 text-yellow-800 text-lg sm:text-xl max-w-2xl mb-4">
+                            ⚠️ Blog en construcción ⚠️
                         </p>
                         <p className="text-gray-600 text-sm italic">
                             "El aprendizaje constante y la pasión son las claves para construir grandes cosas."

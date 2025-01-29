@@ -1,26 +1,57 @@
+import { Home, FileText, MessageSquare, Folder } from "lucide-react";
+
 export const AsideAdmin = () => {
-    return (
-        <aside className="flex flex-col items-start pl-10 bg-white/70 backdrop-blur-lg h-min-screen w-60">
-            <a href="/">
-                <h1 className="text-2xl mt-40 mb-20 text-blue-400 font-bold">YiyehDev</h1>
-            </a>
-            <ul className="flex flex-col items-start">
-                <li className="mb-4 w-full bg-white/70 backdrop-blur-lg rounded-2xl px-4 py-2">
-                    <a href="/Admin/Dashboard" className="text-blue-400 hover:text-blue-600 font-bold">
-                        Inicio
-                    </a>
-                </li>
-                <li className="mb-4 w-full bg-white/70 backdrop-blur-lg rounded-2xl px-4 py-2">
-                    <a href="/Admin/Projects" className="text-blue-400 hover:text-blue-600 font-bold">
-                        Posts
-                    </a>
-                </li>
-                <li className="mb-4 w-full bg-white/70 backdrop-blur-lg rounded-2xl px-4 py-2">
-                    <a href="/Admin/Contact" className="text-blue-400 hover:text-blue-600 font-bold">
-                        Proyectos
-                    </a>
-                </li>
-            </ul>
-        </aside>
-    )
-}
+  return (
+    <aside className="flex flex-col items-center bg-gradient-to-br from-indigo-50 via-white to-sky-50 shadow-lg backdrop-blur-xl h-screen w-64 p-6 rounded-r-3xl">
+      {/* Logo */}
+      <a href="/" className="mb-12">
+        <h1 className="text-3xl font-bold text-blue-500 tracking-wide hover:text-blue-600 transition duration-300">
+          YiyehDev
+        </h1>
+      </a>
+
+      {/* Menú */}
+      <ul className="w-full space-y-4">
+        <li>
+          <a
+            href="/"
+            className="flex items-center gap-3 px-4 py-3 w-full text-blue-500 font-medium rounded-xl transition duration-300 hover:bg-blue-100 hover:text-blue-600"
+          >
+            <Home size={20} />
+            Inicio
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="/Admin/Posts"
+            className="flex items-center gap-3 px-4 py-3 w-full text-blue-500 font-medium rounded-xl transition duration-300 hover:bg-blue-100 hover:text-blue-600"
+          >
+            <FileText size={20} />
+            Posts
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="/Admin/Messages"
+            className="flex items-center gap-3 px-4 py-3 w-full text-blue-500 font-medium rounded-xl transition duration-300 hover:bg-blue-100 hover:text-blue-600"
+          >
+            <MessageSquare size={20} />
+            Mensajes
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="/Admin/Projects"
+            className="flex items-center gap-3 px-4 py-3 w-full text-blue-500 font-medium rounded-xl transition duration-300 hover:bg-blue-100 hover:text-blue-600"
+          >
+            <Folder size={20} />
+            Proyectos
+          </a>
+        </li>
+      </ul>
+    </aside>
+  );
+};

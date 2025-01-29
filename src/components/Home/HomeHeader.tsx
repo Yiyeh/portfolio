@@ -82,7 +82,7 @@ export const HomeHeader = () => {
                         {t("homeHeader.greeting")} <span className="text-blue-400">Freddy Vilches</span>
                     </h1>
                     <p className="text-base sm:text-md text-gray-700 mb-6 text-justify">
-                        {t("homeHeader.description")} <span className="font-semibold text-blue-400">{t("homeHeader.roles.fullStackDeveloper")}</span>
+                        {t("homeHeader.description")} <span className="font-semibold text-blue-400">{t("homeHeader.roles.fullStackDeveloper")} </span> {t("homeHeader.description2")}
                     </p>
                     <ul className="space-y-2 mb-8 text-center ">
                         <li className="bg-yellow-100 text-yellow-600 font-medium text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full shadow transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-default">
@@ -122,7 +122,7 @@ export const HomeHeader = () => {
                     {t("homeHeader.buttons.viewProjects")}
                 </a>
                 <a
-                    href="#"
+                    href="#contact"
                     className="px-6 py-3 sm:px-8 sm:py-4 bg-purple-100 text-purple-700 font-semibold text-base sm:text-lg rounded-lg shadow-md hover:-rotate-z-2 hover:bg-purple-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center"
                 >
                     {t("homeHeader.buttons.contactMe")}

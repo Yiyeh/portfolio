@@ -67,7 +67,7 @@ export const NavBarBlog = () => {
           <NavBarItem title="Inicio" path="/" toggleMenu={toggleMenu} />
           {isAuthenticated ? (
             <>
-              <NavBarItem title="Dashboard" path="/admin/dashboard" toggleMenu={toggleMenu} />
+              <NavBarItem title="Dashboard" path="/admin/posts" toggleMenu={toggleMenu} />
               <button
                 onClick={handleLogout}
                 className="block px-4 py-2 text-red-500 hover:text-red-600 font-bold md:inline-block md:px-2"
