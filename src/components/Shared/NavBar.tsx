@@ -50,7 +50,7 @@ export const NavBar = () => {
         {/* Links */}
         <ul
           className={`${isOpen ? "block" : "hidden"
-            } absolute top-16 left-0  bg-white shadow-md md:static md:flex justify-end md:space-x-2 md:bg-transparent md:shadow-none min-w-lg`}
+            } absolute z-50 top-16 left-0  bg-white shadow-md md:static md:flex justify-end md:space-x-2 md:bg-transparent md:shadow-none min-w-lg`}
         >
           <NavBarItem title={t("navBar.home")} path="#home" toggleMenu={toggleMenu} isOpen={isOpen} />
           <NavBarItem title={t("navBar.about")} path="#sobre-mi" toggleMenu={toggleMenu} isOpen={isOpen} />
