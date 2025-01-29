@@ -1,0 +1,98 @@
+{
+    "navBar": {
+        "home": "Home",
+        "about": "About",
+        "projects": "Projects",
+        "contact": "Contact",
+        "blog": "Blog"
+    },
+        
+    "homeHeader": {
+        "greeting": "Hello! I'm ",
+        "description": "Higher-level IT technician passionate about programming and web development. My goal is to become a {role} and work on exciting projects.",
+        "roles": {
+            "fullStackDeveloper": "Full Stack Developer"
+        },
+        "skills": {
+            "webDevelopment": "🌐 Web and Mobile Application Development",
+            "gameDevelopment": "🎮 Game Development with Godot Engine, Unity, and Unreal Engine",
+            "mobileDevelopment": "📱 Mobile Applications with Flutter",
+            "constantLearning": "📚 Continuous Study and Learning",
+            "programmingPassion": "👨‍💻 Passionate about Programming",
+            "qualityFocus": "🌟 Focus on Quality and Efficiency"
+        },
+        "buttons": {
+            "visitBlog": "Visit my Blog",
+            "viewProjects": "View Projects",
+            "contactMe": "Contact Me"
+        },
+        "location": "Iquique, Chile"
+    },
+    "projects": {
+        "gitGudAiming": {
+            "title": "Git Gud Aiming",
+            "description": "Game designed to improve aiming accuracy and speed in FPS, with interactive levels and high-quality graphics, developed in Unreal Engine 4."
+        },
+        "chileMiniapps": {
+            "title": "Chile Miniapps",
+            "description": "App that provides useful and updated information for Chileans, including on-duty pharmacies, exchange rates, public services and emergency schedules, weather forecasts, and other relevant data."
+        },
+        "flaiteGPT": {
+            "title": "FlaiteGPT",
+            "description": "Application created to learn React, simulating a chatbot similar to ChatGPT, using the OpenAI API (APIKEY currently down)."
+        },
+        "pomodoroApp": {
+            "title": "Pomodoro App",
+            "description": "Simple Pomodoro timer created to practice state management in React. It works with 25-minute work cycles followed by 5-minute breaks and plays a 'ding' sound at each transition."
+        },
+        "tokTik": {
+            "title": "TokTik",
+            "description": "TikTok interface clone developed in Flutter, featuring smooth video playback with lazy loading optimization before being viewed. Created as a learning project to enhance Flutter skills."
+        },
+        "yesNoMaybeApp": {
+            "title": "Yes No Maybe App",
+            "description": "A chat-style app created to practice Flutter, where sending a message ending in '?' triggers a simulated response accompanied by a GIF corresponding to 'Yes,' 'No,' or 'Maybe.'"
+        }
+    },
+    "skillsAndPersonal": {
+        "personalSkills": {
+            "title": "Personal Skills",
+            "description": "Additional skills that enrich and complement my technical profile, allowing me to tackle projects comprehensively, adapt to different challenges, and provide more complete and efficient solutions.",
+            "skills": [
+                "Teamwork",
+                "Effective communication",
+                "Problem-solving",
+                "Adaptability",
+                "Continuous learning"
+            ]
+        },
+        "technicalSkills": {
+            "title": "Technical Skills",
+            "description": "* Clicking on a development technology will redirect you to its official website.",
+            "skills": [
+                "Javascript",
+                "Flutter",
+                "Unreal Engine",
+                "Unity",
+                "Dart",
+                "C#",
+                "Godot Engine",
+                "HTML",
+                "CSS",
+                "Laravel",
+                "MYSQL",
+                "GIT",
+                "Tailwind CSS",
+                "TypeScript",
+                "React"
+            ]
+        }
+    },
+    "navBarLoc": {
+        "home": "Home",
+        "aboutMe": "About Me",
+        "projects": "Projects",
+        "contact": "Contact",
+        "blog": "Blog"
+    }
+}

@@ -1,13 +1,15 @@
+import { useTranslation } from "react-i18next";
 import { ProjectCard } from "../Shared/ProjectCard"
 
 export const Projects = () => {
+  const { t } = useTranslation();
   return (
 
     <div id="projects" className="flex flex-col mx-auto gap-6 items-center justify-center ">
       <ProjectCard
-        title="Git Gud Aiming"
+        title={t('projects.gitGudAiming.title')}
         src="/img/gitgud.jpg"
-        info="Juego diseñado para mejorar la precisión y velocidad de apuntado en FPS, con niveles interactivos y gráficos de calidad, desarrollado en Unreal Engine 4."
+        info={t('projects.gitGudAiming.description')}
         link="https://yiyeh.itch.io/gitgud-aiming"
         githubLink="" // Añadido link a GitHub
         linkName="Itch.io"
@@ -15,9 +17,9 @@ export const Projects = () => {
         tech={['Unreal Engine']}
       />
       <ProjectCard
-        title="Chile Miniapps"
+        title={t('projects.chileMiniapps.title')}
         src="/img/chileminiapps.jpg"
-        info="Aplicación que agrupa información útil y actualizada para los chilenos, incluyendo farmacias de turno, valor de divisas, agenda de servicios públicos y emergencias, pronóstico del clima, entre otros datos de interés."
+        info={t('projects.chileMiniapps.description')}
         link="https://play.google.com/store/apps/details?id=com.YiyehDev.resources_chile"
         githubLink="https://github.com/Yiyeh/chile-miniapps" // Añadido link a GitHub
         linkName="Google PlayStore"
@@ -25,9 +27,9 @@ export const Projects = () => {
         tech={['Dart', 'Flutter']}
       />
       <ProjectCard
-        title="FlaiteGPT"
+        title={t('projects.flaiteGPT.title')}
         src="/img/flaite-gpt.jpg"
-        info="Aplicación creada para aprender React, que simula un chatbot similar a ChatGPT, utilizando la API de OpenAI (APIKEY actualmente caída)."
+        info={t('projects.flaiteGPT.description')}
         link="https://flaitegpt.netlify.app/"
         githubLink="https://github.com/Yiyeh/FlaiteGPT" // Añadido link a GitHub
         linkName="FlaiteGPT"
@@ -35,9 +37,9 @@ export const Projects = () => {
         tech={['Javascript', 'HTML', 'CSS', 'React']}
       />
       <ProjectCard
-        title="Pomodoro App"
+        title={t('projects.pomodoroApp.title')}
         src="/img/pomodoro.jpg"
-        info="Temporizador Pomodoro sencillo creado para practicar la gestión de estados en React. Funciona con ciclos de 25 minutos de trabajo seguidos de 5 minutos de descanso, y emite un sonido 'ding' en cada transición."
+        info={t('projects.pomodoroApp.description')}
         link="https://pomodoro-yiyeh.vercel.app/"
         githubLink="https://github.com/Yiyeh/PomodoroApp" // Añadido link a GitHub
         linkName="Pomodoro App"
@@ -46,16 +48,16 @@ export const Projects = () => {
       />
 
       <ProjectCard
-        title="TokTik"
-        info="Clon de la interfaz de TikTok desarrollado en Flutter, con reproducción de videos que se deslizan de manera fluida y utilizan lazy loading para optimizar la carga antes de ser vistos. Creado como proyecto de aprendizaje para mejorar habilidades en Flutter."
+        title={t('projects.tokTik.title')}
+        info={t('projects.tokTik.description')}
         githubLink="https://github.com/Yiyeh/TokTik" // Añadido link a GitHub
         linkName="TokTik"
         githubName="GitHub"
         tech={['Dart', 'Flutter']}
       />
       <ProjectCard
-        title="Yes No Maybe App"
-        info='Una aplicación tipo chat creada para practicar Flutter, donde al enviar un mensaje que termina en "?" la app responde simulando a la otra persona, acompañando la respuesta con un GIF que corresponde a "Sí", "No" o "Quizas".'
+        title={t('projects.yesNoMaybeApp.title')}
+        info={t('projects.yesNoMaybeApp.description')}
         githubLink="https://github.com/Yiyeh/chatYesNoMaybe" // Añadido link a GitHub
         linkName="Yes No App"
         githubName="GitHub"

@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
+
 export const HomeHeader = () => {
+    const { t } = useTranslation();
     return (
         <div className="flex flex-col bg-white/70 backdrop-blur-lg rounded-2xl p-6 sm:p-10 shadow-xl mx-auto">
             {/* Contenedor principal */}
@@ -22,15 +25,15 @@ export const HomeHeader = () => {
                         >
                             <path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" />
                         </svg>
-                        <span>Iquique, Chile</span>
+                        <span>{t("homeHeader.location")}</span>
                         <img
                             src="https://flagcdn.com/w40/cl.png"
                             alt="Chile Flag"
                             className="w-5 h-3 rounded-sm shadow"
                         />
                     </p>
-                    <div className="flex flex-col mt-4  text-center text-gray-600 gap-2 ">
-                        <a href="https://twitter.com/_Yiyeh" className="text-blue-600 hover:text-blue-600 transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-pointer">
+                    <div className="flex flex-col mt-4  text-center text-gray-600 gap-4 ">
+                        <a href="https://twitter.com/_Yiyeh" className="shadow text-blue-600 hover:text-blue-600 transition-transform transform hover:-rotate-z-2 hover:scale-105 hover:shadow-xl hover:cursor-pointer">
                             <p className="flex items-center justify-center gap-2 bg-blue-100 px-4 py-2 rounded font-bold">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -43,8 +46,8 @@ export const HomeHeader = () => {
                                 _Yiyeh
                             </p>
                         </a>
-                        <a href="https://github.com/Yiyeh" className="text-gray-600 hover:text-gray-700 transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-pointer">
-                            <p className="flex items-center justify-center gap-2 bg-gray-100 px-4 py-2 rounded font-bold">
+                        <a href="https://github.com/Yiyeh" className="shadow text-gray-600 hover:text-gray-700 transition-transform transform hover:-rotate-z-2 hover:scale-105 hover:shadow-xl hover:cursor-pointer">
+                            <p className="flex items-center justify-center gap-2 bg-gray-200 px-4 py-2 rounded font-bold">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     fill="currentColor"
@@ -56,7 +59,7 @@ export const HomeHeader = () => {
                                 Yiyeh
                             </p>
                         </a>
-                        <a href="mailto:Yiyehdev@gmail.com" className="text-yellow-600 hover:text-yellow-700 transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-pointer">
+                        <a href="mailto:Yiyehdev@gmail.com" className="shadow text-yellow-600 hover:text-yellow-700 transition-transform transform hover:-rotate-z-2 hover:scale-105 hover:shadow-xl hover:cursor-pointer">
                             <p className="flex items-center justify-center gap-2 bg-yellow-100 px-4 py-2 rounded font-bold">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -73,35 +76,32 @@ export const HomeHeader = () => {
                     </div>
                 </div>
 
-
                 {/* Texto de bienvenida */}
                 <div className="max-w-2xl text-center md:text-left">
                     <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-600 mb-4 leading-tight">
-                        ¡Hola! Soy <span className="text-blue-400">Freddy Vilches</span>
+                        {t("homeHeader.greeting")} <span className="text-blue-400">Freddy Vilches</span>
                     </h1>
                     <p className="text-base sm:text-md text-gray-700 mb-6 text-justify">
-                        Técnico nivel superior en Informática apasionado por la programación y desarrollo web.
-                        Mi meta es convertirme en un{" "}
-                        <span className="font-semibold text-blue-400">Full Stack Developer</span> y trabajar en proyectos emocionantes.
+                        {t("homeHeader.description")} <span className="font-semibold text-blue-400">{t("homeHeader.roles.fullStackDeveloper")}</span>
                     </p>
                     <ul className="space-y-2 mb-8 text-center ">
                         <li className="bg-yellow-100 text-yellow-600 font-medium text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full shadow transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-default">
-                            🌐 Desarrollo Web y Aplicaciones Móviles
+                            {t("homeHeader.skills.webDevelopment")}
                         </li>
                         <li className="bg-blue-100 text-blue-600 font-medium text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full shadow transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-default">
-                            🎮 Videojuegos con Godot Engine, Unity y Unreal Engine
+                            {t("homeHeader.skills.gameDevelopment")}
                         </li>
                         <li className="bg-green-100 text-green-600 font-medium text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full shadow transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-default">
-                            📱 Aplicaciones Móviles con Flutter
+                            {t("homeHeader.skills.mobileDevelopment")}
                         </li>
                         <li className="bg-purple-100 text-purple-600 font-medium text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full shadow transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-default">
-                            📚 Estudio y aprendizaje constante
+                            {t("homeHeader.skills.constantLearning")}
                         </li>
                         <li className="bg-red-100 text-red-600 font-medium text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full shadow transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-default">
-                            👨‍💻 Apasionado por la programación
+                            {t("homeHeader.skills.programmingPassion")}
                         </li>
                         <li className="bg-teal-100 text-teal-600 font-medium text-xs sm:text-sm px-3 sm:px-4 py-2 rounded-full shadow transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-default">
-                            🌟 Enfoque en la calidad y la eficiencia
+                            {t("homeHeader.skills.qualityFocus")}
                         </li>
                     </ul>
                 </div>
@@ -111,21 +111,21 @@ export const HomeHeader = () => {
             <div className="flex flex-col sm:flex-row justify-center sm:justify-center md:justify-end gap-4 mt-6 items-center">
                 <a
                     href="/blog"
-                    className="px-6 py-3 sm:px-8 sm:py-4 bg-green-100 text-green-600 font-semibold text-base sm:text-lg rounded-lg shadow-md hover:bg-green-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center"
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-green-100 text-green-600 font-semibold text-base sm:text-lg rounded-lg shadow-md hover:-rotate-z-2 hover:bg-green-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center"
                 >
-                    Visita mi Blog
+                    {t("homeHeader.buttons.visitBlog")}
                 </a>
                 <a
                     href="#projects"
-                    className="px-6 py-3 sm:px-8 sm:py-4 bg-blue-100 text-blue-600 font-semibold text-base sm:text-lg rounded-lg shadow-md hover:bg-blue-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center"
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-blue-100 text-blue-600 font-semibold text-base sm:text-lg rounded-lg shadow-md hover:-rotate-z-2 hover:bg-blue-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center"
                 >
-                    Ver Proyectos
+                    {t("homeHeader.buttons.viewProjects")}
                 </a>
                 <a
                     href="#"
-                    className="px-6 py-3 sm:px-8 sm:py-4 bg-gray-100 text-gray-700 font-semibold text-base sm:text-lg rounded-lg shadow-md hover:bg-gray-200 hover:text-gray-900 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center"
+                    className="px-6 py-3 sm:px-8 sm:py-4 bg-purple-100 text-purple-700 font-semibold text-base sm:text-lg rounded-lg shadow-md hover:-rotate-z-2 hover:bg-purple-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105 text-center"
                 >
-                    Contáctame
+                    {t("homeHeader.buttons.contactMe")}
                 </a>
             </div>
         </div>

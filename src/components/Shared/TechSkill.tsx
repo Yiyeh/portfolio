@@ -122,7 +122,7 @@ export const TechBadge = ({ tech: text }: Props) => {
   return (
     <span
       onClick={handleClick}
-      className={`inline-flex items-center justify-center gap-1 font-medium text-xs px-3 py-2 rounded-full shadow transition-transform transform hover:scale-105 hover:shadow-xl hover:cursor-pointer ${badge.bgColor} ${badge.textColor}`}
+      className={`inline-flex items-center justify-center gap-1 font-medium text-xs px-3 py-2 rounded-full shadow transition-transform hover:-rotate-z-2 transform hover:scale-105 hover:shadow-xl hover:cursor-pointer ${badge.bgColor} ${badge.textColor}`}
     >
       <img src={badge.logo} alt={`${text} logo`} className="w-4 h-4" />
       {text}

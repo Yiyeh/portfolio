@@ -71,6 +71,14 @@ export default function BlogHome() {
                             desarrollador apasionado por la programación. En este espacio comparto mis proyectos, aprendizajes y reflexiones
                             sobre <span className="font-semibold text-blue-400">desarrollo web</span>, videojuegos y mucho más.
                         </p>
+
+                        <p className="text-gray-700 text-sm max-w-2xl mb-4">
+                            * Esta parte del sitio está construida con React y Firebase.
+                        </p>
+
+                        <p className="bg-red-100 rounded-2xl py-2 px-4 text-red-400 text-lg sm:text-xl max-w-2xl mb-4">
+                        ⚠️ Blog en construcción ⚠️
+                        </p>
                         <p className="text-gray-600 text-sm italic">
                             "El aprendizaje constante y la pasión son las claves para construir grandes cosas."
                         </p>

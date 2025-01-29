@@ -1,4 +1,7 @@
+import { useTranslation } from "react-i18next";
 export const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-gradient-to-br from-indigo-50 via-white to-sky-50 text-blue-700 py-8">
       <div className="container mx-auto px-6">
@@ -14,25 +17,25 @@ export const Footer = () => {
               href="#sobre-mi"
               className="text-blue-400 font-bold hover:text-blue-800 transition"
             >
-              Sobre mí
+              {t("navBar.about")}
             </a>
             <a
               href="#projects"
               className="text-blue-400 font-bold hover:text-blue-800 transition"
             >
-              Proyectos
+              {t("navBar.projects")}
             </a>
             <a
               href="#contact"
               className="text-blue-400 font-bold hover:text-blue-800 transition"
             >
-              Contacto
+              {t("navBar.contact")}
             </a>
             <a
               href="/blog"
               className="text-blue-400 font-bold hover:text-blue-800 transition"
             >
-              Blog
+              {t("navBar.blog")}
             </a>
           </div>
         </div>

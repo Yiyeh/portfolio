@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "./LanguageSwitcher";
+
+
 
 export const NavBar = () => {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -12,8 +17,12 @@ export const NavBar = () => {
     <nav className="fixed top-0 left-0 w-full p-4 bg-gradient-to-br from-indigo-50 via-white to-sky-50 shadow-md z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <div className="text-blue-400 font-bold transition text-2xl">
+        <div className="text-blue-400 font-bold transition text-2xl ml-10 md:ml-">
           YiyehDev
+        </div>
+
+        <div className="flex w-full items-center justify-start ml-20  ">
+          <LanguageSwitcher />
         </div>
 
         {/* Hamburger Button (Visible in mobile) */}
@@ -39,16 +48,14 @@ export const NavBar = () => {
 
         {/* Links */}
         <ul
-          className={`${
-            isOpen ? "block" : "hidden"
-          } absolute top-16 left-0 w-full bg-white shadow-md md:static md:flex justify-end md:space-x-2 md:bg-transparent md:shadow-none`}
+          className={`${isOpen ? "block" : "hidden"
+            } absolute top-16 left-0  bg-white shadow-md md:static md:flex justify-end md:space-x-2 md:bg-transparent md:shadow-none`}
         >
-          <NavBarItem title="Inicio" path="#home" toggleMenu={toggleMenu} />
-          <NavBarItem title="Sobre mí" path="#sobre-mi" toggleMenu={toggleMenu} />
-          <NavBarItem title="Proyectos" path="#projects" toggleMenu={toggleMenu} />
-          <NavBarItem title="Contacto" path="#footer" toggleMenu={toggleMenu} />
-          <NavBarItem title="Blog" path="/blog" toggleMenu={toggleMenu} />
-          
+          <NavBarItem title={t("navBar.home")} path="#home" toggleMenu={toggleMenu} isOpen={isOpen} />
+          <NavBarItem title={t("navBar.about")} path="#sobre-mi" toggleMenu={toggleMenu} isOpen={isOpen} />
+          <NavBarItem title={t("navBar.projects")} path="#projects" toggleMenu={toggleMenu} isOpen={isOpen} />
+          <NavBarItem title={t("navBar.contact")} path="#footer" toggleMenu={toggleMenu} isOpen={isOpen} />
+          <NavBarItem title={t("navBar.blog")} path="/blog" toggleMenu={toggleMenu} isOpen={isOpen} />
         </ul>
       </div>
     </nav>
@@ -59,9 +66,10 @@ interface NavBarItemProps {
   title: string;
   path: string;
   toggleMenu: () => void;
+  isOpen: boolean
 }
 
-export const NavBarItem = ({ title, path, toggleMenu }: NavBarItemProps) => {
+export const NavBarItem = ({ title, path, toggleMenu}: NavBarItemProps) => {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (path.startsWith("#")) {
       e.preventDefault();
@@ -74,13 +82,13 @@ export const NavBarItem = ({ title, path, toggleMenu }: NavBarItemProps) => {
     }
   };
 
-  return (
-    <li className=" ">
+
+    return (<li className=" ">
       {path.startsWith("#") ? (
         <a
           href={path}
           onClick={handleScroll}
-          className="block px-4 py-2 font-bold text-blue-400 hover:text-blue-600 md:inline-block md:px-2"
+          className="block px-4 py-2 font-bold text-blue-400 hover:text-blue-600 md:inline-block md:px-2 whitespace-nowrap"
         >
           {title}
         </a>
@@ -89,8 +97,7 @@ export const NavBarItem = ({ title, path, toggleMenu }: NavBarItemProps) => {
           to={path}
           onClick={toggleMenu}
           className={({ isActive }) =>
-            `block px-4 py-2 text-blue-400 hover:blue-gray-600 md:inline-block md:px-2 font-bold ${
-              isActive ? "font-bold text-blue-600" : ""
+            `block px-4 py-2 text-blue-400 hover:blue-gray-600 md:inline-block md:px-2 font-bold ${isActive ? "font-bold text-blue-600 whitespace-nowrap" : ""
             }`
           }
         >
@@ -98,5 +105,75 @@ export const NavBarItem = ({ title, path, toggleMenu }: NavBarItemProps) => {
         </NavLink>
       )}
     </li>
-  );
+    );
+  
 };
+
+
+
+// export const NavBarItem = ({ title, path, toggleMenu, isOpen }: NavBarItemProps) => {
+//   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+//     if (path.startsWith("#")) {
+//       e.preventDefault();
+//       const targetId = path.slice(1);
+//       const targetElement = document.getElementById(targetId);
+//       if (targetElement) {
+//         targetElement.scrollIntoView({ behavior: "smooth" });
+//       }
+//       toggleMenu();
+//     }
+//   };
+
+//   if (isOpen) {
+
+//     return (<li className=" ">
+//       {path.startsWith("#") ? (
+//         <a
+//           href={path}
+//           onClick={handleScroll}
+//           className="flex min-w-screen items-center justify-center px-4 py-2 font-bold text-blue-400 hover:text-blue-600 md:inline-block md:px-2"
+//         >
+//           {title}
+//         </a>
+//       ) : (
+//         <NavLink
+//           to={path}
+//           onClick={toggleMenu}
+//           className={({ isActive }) =>
+//             `flex min-w-screen items-center justify-center px-4 py-2 text-blue-400 hover:blue-gray-600 md:inline-block md:px-2 font-bold ${isActive ? "font-bold text-blue-600" : ""
+//             }`
+//           }
+//         >
+//           {title}
+//         </NavLink>
+//       )}
+//     </li>
+//     );
+
+//   } else {
+
+//     return (<li className=" ">
+//       {path.startsWith("#") ? (
+//         <a
+//           href={path}
+//           onClick={handleScroll}
+//           className="block px-4 py-2 font-bold text-blue-400 hover:text-blue-600 md:inline-block md:px-2"
+//         >
+//           {title}
+//         </a>
+//       ) : (
+//         <NavLink
+//           to={path}
+//           onClick={toggleMenu}
+//           className={({ isActive }) =>
+//             `block px-4 py-2 text-blue-400 hover:blue-gray-600 md:inline-block md:px-2 font-bold ${isActive ? "font-bold text-blue-600" : ""
+//             }`
+//           }
+//         >
+//           {title}
+//         </NavLink>
+//       )}
+//     </li>
+//     );
+//   }
+// };

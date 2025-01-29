@@ -45,7 +45,7 @@ export const ProjectCard = ({ title, src = "/img/github.jpg", info, link, linkNa
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-4 py-1 bg-blue-100 text-blue-600 font-semibold text-md rounded-lg shadow-md hover:bg-blue-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="inline-block px-4 py-1 bg-blue-100 text-blue-600 font-semibold text-md rounded-lg shadow-md hover:-rotate-z-2 hover:bg-blue-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 {linkName || "Ver más"}
               </a>
@@ -57,7 +57,7 @@ export const ProjectCard = ({ title, src = "/img/github.jpg", info, link, linkNa
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-4 py-1 bg-gray-600 text-white font-semibold text-md rounded-lg shadow-md hover:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="inline-block px-4 py-1 bg-gray-600 text-white font-semibold text-md rounded-lg shadow-md hover:-rotate-z-2 hover:bg-gray-800 hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
                 {githubName || "Ver en GitHub"}
               </a>

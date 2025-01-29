@@ -1,6 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-
-
 import { Home } from "./pages/Home/Home";
 
 import BlogHome from "./pages/Blog/BlogHome";
@@ -11,7 +9,6 @@ import {CreatePost} from "./pages/Admin/CreatePost";
 
 function App() {
   return (
-    <>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -20,7 +17,6 @@ function App() {
         <Route path="/Admin/Dashboard" element={<AdminDashboard />} />
         <Route path="/Admin/CreatePost" element={<CreatePost />} />
       </Routes> 
-    </>
   );
 };
 

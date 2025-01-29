@@ -1,0 +1,91 @@
+{
+    "navBar": {
+        "home": "Inicio",
+        "about": "Acerca de mi",
+        "projects": "Proyectos",
+        "contact": "Contacto",
+        "blog": "Blog"
+    },
+        
+    "homeHeader": {
+        "greeting": "¡Hola! Soy ",
+        "description": "Técnico nivel superior en Informática apasionado por la programación y desarrollo web. Mi meta es convertirme en un {role} y trabajar en proyectos emocionantes.",
+        "roles": {
+            "fullStackDeveloper": "Full Stack Developer"
+        },
+        "skills": {
+            "webDevelopment": "🌐 Desarrollo Web y Aplicaciones Móviles",
+            "gameDevelopment": "🎮 Videojuegos con Godot Engine, Unity y Unreal Engine",
+            "mobileDevelopment": "📱 Aplicaciones Móviles con Flutter",
+            "constantLearning": "📚 Estudio y aprendizaje constante",
+            "programmingPassion": "👨‍💻 Apasionado por la programación",
+            "qualityFocus": "🌟 Enfoque en la calidad y la eficiencia"
+        },
+        "buttons": {
+            "visitBlog": "Visita mi Blog",
+            "viewProjects": "Ver Proyectos",
+            "contactMe": "Contáctame"
+        },
+        "location": "Iquique, Chile"
+    },
+    "skillsAndPersonal": {
+        "personalSkills": {
+            "title": "Habilidades Personales",
+            "description": "Habilidades adicionales que enriquecen y complementan mi perfil técnico, permitiéndome abordar proyectos de manera integral, adaptarme a diferentes desafíos y aportar soluciones más completas y eficientes.",
+            "skills": [
+                "Trabajo en equipo",
+                "Comunicación efectiva",
+                "Resolución de problemas",
+                "Adaptabilidad",
+                "Aprendizaje constante"
+            ]
+        },
+        "technicalSkills": {
+            "title": "Habilidades Técnicas",
+            "description": "* Al hacer clic sobre alguna tecnología de desarrollo, te redirigirá al sitio oficial de la tecnología.",
+            "skills": [
+                "Javascript",
+                "Flutter",
+                "Unreal Engine",
+                "Unity",
+                "Dart",
+                "C#",
+                "Godot Engine",
+                "HTML",
+                "CSS",
+                "Laravel",
+                "MYSQL",
+                "GIT",
+                "Tailwind CSS",
+                "TypeScript",
+                "React"
+            ]
+        }
+    },
+    "projects": {
+        "gitGudAiming": {
+            "title": "Git Gud Aiming",
+            "description": "Juego diseñado para mejorar la precisión y velocidad de apuntado en FPS, con niveles interactivos y gráficos de calidad, desarrollado en Unreal Engine 4."
+        },
+        "chileMiniapps": {
+            "title": "Chile Miniapps",
+            "description": "Aplicación que agrupa información útil y actualizada para los chilenos, incluyendo farmacias de turno, valor de divisas, agenda de servicios públicos y emergencias, pronóstico del clima, entre otros datos de interés."
+        },
+        "flaiteGPT": {
+            "title": "FlaiteGPT",
+            "description": "Aplicación creada para aprender React, que simula un chatbot similar a ChatGPT, utilizando la API de OpenAI (APIKEY actualmente caída)."
+        },
+        "pomodoroApp": {
+            "title": "Pomodoro App",
+            "description": "Temporizador Pomodoro sencillo creado para practicar la gestión de estados en React. Funciona con ciclos de 25 minutos de trabajo seguidos de 5 minutos de descanso, y emite un sonido 'ding' en cada transición."
+        },
+        "tokTik": {
+            "title": "TokTik",
+            "description": "Clon de la interfaz de TikTok desarrollado en Flutter, con reproducción de videos que se deslizan de manera fluida y utilizan lazy loading para optimizar la carga antes de ser vistos. Creado como proyecto de aprendizaje para mejorar habilidades en Flutter."
+        },
+        "yesNoMaybeApp": {
+            "title": "Yes No Maybe App",
+            "description": "Una aplicación tipo chat creada para practicar Flutter, donde al enviar un mensaje que termina en '?' la app responde simulando a la otra persona, acompañando la respuesta con un GIF que corresponde a 'Sí', 'No' o 'Quizás'."
+        }
+    }
+}
