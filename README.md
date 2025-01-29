@@ -1,50 +1,74 @@
-# React + TypeScript + Vite
+# 🚀 YiyehDev - Portafolio Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenido a mi portafolio web. Este es un proyecto diseñado para mostrar mis habilidades en desarrollo web, incluyendo frontend, backend y desarrollo de videojuegos. 🌟
 
-Currently, two official plugins are available:
+## 🌍 **Demo en Vivo**
+🔗 [Ver Portafolio en Vivo](https://YiyehDev.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 **Tecnologías Utilizadas**
 
-## Expanding the ESLint configuration
+- **Frontend:** React + Vite + TypeScript
+- **Estilos:** Tailwind CSS
+- **Autenticación:** Firebase Authentication
+- **Base de Datos:** Firestore
+- **Almacenamiento de Archivos:** Firebase Storage
+- **Traducción:** i18next para soporte multilenguaje
+- **Despliegue:** Hostinger
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## ✨ **Características Principales**
 
-- Configure the top-level `parserOptions` property like this:
+✅ **Landing Page Personalizada:** Presentación limpia y profesional.   
+✅ **Blog JAMstack:** Implementado con Firebase para manejar autenticación, almacenamiento y base de datos.  
+✅ **Administración de Contenido:** Panel de administración para gestionar publicaciones y mensajes.  
+✅ **Optimización SEO:** URLs amigables, metaetiquetas dinámicas y carga optimizada.  
+✅ **100% Responsivo:** Adaptado para dispositivos móviles y de escritorio.  
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🚀 **Instalación y Uso**
+
+### 1️⃣ Clonar el repositorio
+```bash
+git clone https://github.com/Yiyeh/tu-repo.git
+cd tu-repo
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 2️⃣ Instalar dependencias
+```bash
+yarn install  # O npm install
 ```
+
+### 3️⃣ Configurar Firebase
+1. Crea un proyecto en Firebase.
+2. Habilita Authentication (Google, Email/Password, etc.).
+3. Configura Firestore y Storage.
+4. Copia las credenciales en un archivo `.env.local`.
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+```
+
+### 4️⃣ Ejecutar el proyecto en modo desarrollo
+```bash
+yarn dev  # O npm run dev
+```
+
+### 5️⃣ Compilar para producción
+```bash
+yarn build  # O npm run build
+```
+
+
+## 📬 **Contacto**
+
+Si quieres colaborar o tienes preguntas, contáctame:
+- ✉️ Email: Yiyehdev@gmail.com  
+- 🐦 Twitter: [@YiyehDev](https://twitter.com/_Yiyeh)  
+
+---
+
+**🌟 Si te gusta este proyecto, dale una estrella en GitHub!** ⭐
+

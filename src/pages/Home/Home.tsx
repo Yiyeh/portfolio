@@ -4,6 +4,7 @@ import { SkillsAndPersonal } from "../../components/Home/SkillsAndPersonal";
 import { Projects } from "../../components/Home/Projects";
 import { Footer } from "../../components/Shared/Footer";
 import { SendContact } from "../../components/Home/Contact";
+import { ScrollToTop } from "../../components/Shared/ScrollToTop";
 
 
 export const Home = () => {
@@ -22,6 +23,7 @@ export const Home = () => {
         </div>
       </div>
       <Footer />
+      <ScrollToTop/>
     </>
   );
 };
