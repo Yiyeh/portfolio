@@ -3,24 +3,16 @@ import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 import { NavBarBlog } from "../../components/Shared/NavBarBlog";
 import { FooterBlog } from "../../components/Shared/FooterBlog";
+import { Post } from "../../entities/PostEntity";
+//import { NavLink } from "react-router-dom";
 
 
 // Define el tipo para un post
-interface Post {
-    id: string;
-    title: string;
-    content: string;
-    author: {
-        name: string;
-        uid: string;
-    };
-    tags: string[];
-    createdAt: Date;
-}
+
 
 export default function BlogHome() {
     const [posts, setPosts] = useState<Post[]>([]);
-    const [selectedPost, setSelectedPost] = useState<Post | null>(null);
+    
 
     useEffect(() => {
         const fetchPosts = async () => {
@@ -47,8 +39,8 @@ export default function BlogHome() {
         fetchPosts();
     }, []);
 
-    const openModal = (post: Post) => setSelectedPost(post);
-    const closeModal = () => setSelectedPost(null);
+   
+ 
 
     return (
         <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200">
@@ -103,14 +95,14 @@ export default function BlogHome() {
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-6">
                             {posts.map((post) => (
-                                <BlogPostPreview key={post.id} post={post} openModal={openModal} />
+                                <BlogPostPreview key={post.id} post={post}  />
                             ))}
                         </div>
                     )}
                 </div>
             </div>
 
-            {selectedPost && <Modal post={selectedPost} onClose={closeModal} />}
+         
             <FooterBlog />
         </div>
     );
@@ -118,17 +110,19 @@ export default function BlogHome() {
 
 interface BlogPostPreviewProps {
     post: Post;
-    openModal: (post: Post) => void;
+  
 }
 
-export const BlogPostPreview = ({ post, openModal }: BlogPostPreviewProps) => {
+export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
     return (
         <div className="bg-white/70 shadow-md rounded-xl overflow-hidden transform transition-transform hover:scale-105 hover:shadow-lg">
             <div className="flex flex-col h-full p-6">
                 <div className="flex-1">
                     <h2
                         className="text-xl sm:text-2xl font-bold text-blue-400 mb-3 capitalize cursor-pointer hover:underline"
-                        onClick={() => openModal(post)}
+                        onClick={() =>
+                            window.location.href = `/blog/${post.slug}`
+                        }
                     >
                         {post.title}
                     </h2>
@@ -159,45 +153,5 @@ export const BlogPostPreview = ({ post, openModal }: BlogPostPreviewProps) => {
     );
 };
 
-interface ModalProps {
-    post: Post;
-    onClose: () => void;
-}
 
-const Modal = ({ post, onClose }: ModalProps) => {
-    return (
-        <div className="fixed inset-0 bg-blue-100 bg-opacity-50 flex items-center justify-center z-50">
-            <div className="bg-white rounded-xl shadow-lg max-w-3xl w-full p-6 relative">
-                <button
-                    onClick={onClose}
-                    className="bg-blue-300 hover:bg-blue-400 rounded-2xl py-2 px-4 text-white hover:text-white absolute top-4 right-4"
-                >
-                    cerrar ✕
-                </button>
-                <h2 className="text-2xl font-bold text-blue-400 mb-4 capitalize">{post.title}</h2>
-                <p className="text-gray-700 mb-6">{post.content}</p>
-
-                {post.tags && post.tags.length > 0 ? (
-                    <div className="flex flex-wrap gap-2 mb-4">
-                        {post.tags.map((tag, index) => (
-                            <span
-                                key={`${tag}-${index}`}
-                                className="px-3 py-1 text-xs font-medium text-blue-400 bg-blue-300 rounded-full"
-                            >
-                                #{tag}
-                            </span>
-                        ))}
-                    </div>
-                ) : (
-                    <p className="text-gray-400 italic text-sm">Sin etiquetas</p>
-                )}
-
-                <div className="text-gray-500 text-sm">
-                    <span>Por: {post.author.name}</span> ·{" "}
-                    <span>{new Date(post.createdAt).toLocaleDateString()}</span>
-                </div>
-            </div>
-        </div>
-    );
-};
 

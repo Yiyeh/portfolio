@@ -9,7 +9,7 @@ export const SkillsAndPersonal = () => {
     { name: "Comunicación efectiva", color: "green" },
     { name: "Resolución de problemas", color: "yellow" },
     { name: "Adaptabilidad", color: "purple" },
-    { name: "Aprendizaje constante", color: "pink" }
+    { name: "Aprendizaje constante", color: "teal" }
   ];
 
   const techStack = [

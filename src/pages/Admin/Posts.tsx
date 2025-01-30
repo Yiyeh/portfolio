@@ -3,8 +3,11 @@ import { collection, getDocs, query, orderBy, deleteDoc, doc } from "firebase/fi
 import { db } from "../../firebaseConfig";
 import { AsideAdmin } from "../../components/Admin/AsideAdmin";
 
+
 interface Post {
     id: string;
+    uuid: string;
+    slug: string;
     title: string;
     content: string;
     author: {
@@ -82,6 +85,8 @@ export const AdminPosts = () => {
                 <Post
                   key={post.id}
                   id={post.id}
+                  uuid={post.uuid}
+                  slug={post.slug}
                   title={post.title}
                   content={post.content}
                   author={post.author}
@@ -101,12 +106,15 @@ interface PostProps extends Post {
     onDelete: (id: string) => void;
 }
 
-export const Post = ({ id, title, content, author, tags, createdAt, onDelete }: PostProps) => {
+export const Post = ({ id, title, slug, content, author, tags, createdAt, onDelete }: PostProps) => {
     return (
         <div className="w-full bg-white/70 backdrop-blur-lg py-4 px-6 rounded-2xl shadow-md">
             <div className="flex justify-between items-center mb-4">
                 <h1 className="text-xl font-bold text-blue-400 truncate">{title}</h1>
                 <p className="text-sm text-gray-500">{author.name}</p>
+            </div>
+            <div className="flex justify-between items-center mb-4">
+                <p className="text-sm text-gray-500">{slug}</p>
             </div>
 
             <div className="mb-4">

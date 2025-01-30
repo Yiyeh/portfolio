@@ -89,7 +89,7 @@ export const NavBarItem = ({ title, path, toggleMenu}: NavBarItemProps) => {
         <a
           href={path}
           onClick={handleScroll}
-          className="block min-w-screen  md:min-w-0 justify-center px-4 py-2 font-bold text-blue-400 hover:text-blue-600 md:inline-block md:px-2 whitespace-nowrap"
+          className="block min-w-screen  md:min-w-0 justify-center px-4 py-2 font-bold text-blue-400 hover:text-blue-600 md:inline-block md:px-2 whitespace-nowrap s"
         >
           {title}
         </a>

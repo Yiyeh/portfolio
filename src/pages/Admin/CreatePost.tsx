@@ -1,47 +1,52 @@
 import { useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
+import {  doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../../firebaseConfig";
+import { v4 as uuidv4 } from "uuid"; // Importa UUID
+import slugify from "slugify"; // Importa slugify
 import { AsideAdmin } from "../../components/Admin/AsideAdmin";
 
-
 export const CreatePost = () => {
-
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
-    const [tags, setTags] = useState(""); // Estado para manejar las etiquetas como cadena
-  
+    const [tags, setTags] = useState("");
+
     const handleSubmit = async (e: React.FormEvent) => {
-      e.preventDefault();
-  
-      // Convierte las etiquetas separadas por comas en una lista
-      const tagsArray = tags
-        .split(",") // Divide la cadena en partes
-        .map((tag) => tag.trim()) // Elimina espacios en blanco
-        .filter((tag) => tag !== ""); // Filtra etiquetas vacías
-  
-      if (!auth.currentUser ) {
-        alert("Debes iniciar sesión para publicar.");
-        return;
-      }
-  
-      try {
-        await addDoc(collection(db, "posts"), {
-          title,
-          content,
-          tags: tagsArray, // Guarda las etiquetas como un array
-          author: {
-            name: auth.currentUser.displayName,
-            uid: auth.currentUser.uid,
-          },
-          createdAt: new Date(),
-        });
-        alert("Entrada publicada con éxito.");
-        setTitle("");
-        setContent("");
-        setTags(""); // Reinicia las etiquetas
-      } catch (error) {
-        console.error("Error al publicar:", error);
-      }
+        e.preventDefault();
+
+        if (!auth.currentUser) {
+            alert("Debes iniciar sesión para publicar.");
+            return;
+        }
+
+        // Generar slug a partir del título
+        
+        // Generar UUID
+        const uuid = uuidv4();
+
+        const slug = slugify(title, { lower: true, strict: true }) + "-" + uuid;
+
+        try {
+            await setDoc(doc(db, "posts", uuid), {
+                uuid, // Almacenar UUID como ID único del post
+                title,
+                slug, // Guardamos el slug generado
+                content,
+                tags: tags.split(",").map(tag => tag.trim()).filter(tag => tag !== ""),
+                author: {
+                    name: auth.currentUser.displayName,
+                    uid: auth.currentUser.uid,
+                },
+                createdAt: new Date(),
+            });
+
+            alert("Entrada publicada con éxito.");
+            setTitle("");
+            setContent("");
+            setTags("");
+
+        } catch (error) {
+            console.error("Error al publicar:", error);
+        }
     };
 
     return (
