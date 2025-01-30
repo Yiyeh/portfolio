@@ -1,35 +1,26 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, orderBy, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
-import { AsideAdmin } from "../../components/Admin/AsideAdmin";
+import { AsideAdmin } from "../../components/Admin/SideBarAdmin";
+import { ContactMessage} from "./../../entities/ContactMessageEntity";
 
-interface Message {
-  id: string;
-  name: string;
-  email: string;
-  content: string;
-  createdAt: string;
-}
 
 export const AdminMessages = () => {
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [messages, setMessages] = useState<ContactMessage[]>([]);
 
   useEffect(() => {
     const fetchMessages = async () => {
       try {
+        
         const messagesQuery = query(collection(db, "contactMessages"), orderBy("createdAt", "desc"));
         const querySnapshot = await getDocs(messagesQuery);
-
-        const fetchedMessages: Message[] = querySnapshot.docs.map((doc) => {
-            const data = doc.data(); // Obtener los datos del documento
-            return {
-              id: doc.id,
-              name: data.name || "Anónimo", // Manejar valores faltantes
-              email: data.email || "No especificado",
-              content: data.content || "Sin contenido",
-              createdAt: data.createdAt?.toDate().toLocaleDateString() || "Fecha desconocida",
-            };
-          });
+        const fetchedMessages: ContactMessage[] = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          name: doc.data().name || "Anónimo",
+          email: doc.data().email || "No especificado",
+          content: doc.data().content || "Sin contenido",
+          createdAt: doc.data().createdAt?.toDate().toLocaleString() || "Fecha desconocida",
+        }));
 
         setMessages(fetchedMessages);
       } catch (error) {
@@ -40,7 +31,14 @@ export const AdminMessages = () => {
     fetchMessages();
   }, []);
 
+
   const handleDelete = async (id: string) => {
+
+    const confirmDelete = window.confirm("¿Estás seguro de eliminar este mensaje?");
+        if (!confirmDelete) {
+            return;
+        }
+
     try {
       await deleteDoc(doc(db, "contactMessages", id)); // Nombre de la colección corregido
       setMessages((prevMessages) => prevMessages.filter((message) => message.id !== id));
@@ -76,7 +74,7 @@ export const AdminMessages = () => {
 };
 
 // Componente Message corregido
-interface MessageProps extends Message {
+interface MessageProps extends ContactMessage {
   onDelete: (id: string) => void;
 }
 
@@ -91,7 +89,8 @@ const Message = ({ id, name, email, content, createdAt, onDelete }: MessageProps
       <p className="text-gray-600 text-sm mb-3">{content}</p>
 
       <div className="flex justify-between items-center text-gray-500 text-sm">
-        <p>{createdAt}</p>
+        
+      <p>{createdAt.toLocaleString()}</p>
         <button
           className="bg-red-400 hover:bg-red-600 text-white font-bold py-1 px-3 rounded"
           onClick={() => onDelete(id)}

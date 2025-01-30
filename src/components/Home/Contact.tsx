@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
-import { db } from "../../firebaseConfig";
-
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 import { useTranslation } from "react-i18next";
+import { ContactMessageService } from "../../services/ContactMessageService";
 
 
 export const SendContact = () => {
@@ -30,21 +28,20 @@ export const SendContact = () => {
         });
 
         try {
-            await addDoc(collection(db, "contactMessages"), {
+            await ContactMessageService.createMessage(
                 name,
-                content,
                 email,
-                createdAt: new Date(),
-            });
-
+                content           
+            )
             notify();
-
-            setTitle("");
-            setContent("");
-            setEmail("");
         } catch (error) {
             console.error("Error al publicar:", error);
         }
+
+        //resetear los campos
+        setTitle("");
+        setContent("");
+        setEmail("");
     };
 
     return (
@@ -121,19 +118,7 @@ export const SendContact = () => {
                     </button>
                 </form>
             </div>
-            <ToastContainer
-                position="top-right"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick={false}
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-                transition={Bounce}
-            />
+            <ToastContainer/>
         </>
     )
 };

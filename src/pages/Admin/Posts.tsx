@@ -1,22 +1,10 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, orderBy, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
-import { AsideAdmin } from "../../components/Admin/AsideAdmin";
+import { AsideAdmin } from "../../components/Admin/SideBarAdmin";
+import { Post } from "../../entities/PostEntity";
 
 
-interface Post {
-    id: string;
-    uuid: string;
-    slug: string;
-    title: string;
-    content: string;
-    author: {
-        name: string;
-        uid: string;
-    };
-    tags: string[];
-    createdAt: Date;
-}
 
 export const AdminPosts = () => {
     const [posts, setPosts] = useState<Post[]>([]);
@@ -33,7 +21,13 @@ export const AdminPosts = () => {
                 // Mapear los documentos para estructurar los datos
                 const fetchedPosts: Post[] = querySnapshot.docs.map((doc) => ({
                     id: doc.id,
-                    ...(doc.data() as Omit<Post, "id">),
+                    uuid: doc.data().uuid,
+                    slug: doc.data().slug,
+                    title: doc.data().title,
+                    content: doc.data().content,
+                    author: doc.data().author,
+                    createdAt: doc.data().createdAt?.toDate().toLocaleString(),
+                    tags: doc.data().tags
                 }));
     
                 // Actualizar el estado con los posts ordenados
@@ -49,6 +43,13 @@ export const AdminPosts = () => {
     
 
     const handleDelete = async (id: string) => {
+        // consultar si quieres eliminar
+        
+        const confirmDelete = window.confirm("¿Estás seguro de eliminar este post?");
+        if (!confirmDelete) {
+            return;
+        }
+
         try {
             await deleteDoc(doc(db, "posts", id));
             setPosts((prevPosts) => prevPosts.filter((post) => post.id !== id)); // Actualizar estado local
@@ -67,7 +68,7 @@ export const AdminPosts = () => {
               {/* Header con Publicaciones y Agregar Post */}
               <div className="flex items-center justify-between w-full h-16 bg-white/70 backdrop-blur-lg rounded-2xl px-6 shadow-md">
                 {/* Título centrado */}
-                <h1 className="text-2xl font-bold text-blue-400 mx-auto">
+                <h1 className="text-2xl font-bold text-blue-400 mx-auto ">
                   Publicaciones
                 </h1>
       
@@ -82,7 +83,7 @@ export const AdminPosts = () => {
       
               {/* Mapeo de publicaciones */}
               {posts.map((post) => (
-                <Post
+                <PostContainer
                   key={post.id}
                   id={post.id}
                   uuid={post.uuid}
@@ -106,7 +107,7 @@ interface PostProps extends Post {
     onDelete: (id: string) => void;
 }
 
-export const Post = ({ id, title, slug, content, author, tags, createdAt, onDelete }: PostProps) => {
+export const PostContainer = ({ id, title, slug, content, author, tags, createdAt, onDelete }: PostProps) => {
     return (
         <div className="w-full bg-white/70 backdrop-blur-lg py-4 px-6 rounded-2xl shadow-md">
             <div className="flex justify-between items-center mb-4">
@@ -140,7 +141,7 @@ export const Post = ({ id, title, slug, content, author, tags, createdAt, onDele
             </div>
 
             <div className="flex justify-between items-center">
-                <p className="text-gray-500 text-sm">{new Date(createdAt).toLocaleDateString()}</p>
+                <p className="text-gray-500 text-sm">{ createdAt.toLocaleString() }</p>
                 <div className="flex gap-2">
                     <button
                         className="bg-red-400 hover:bg-red-600 text-white font-bold py-1 px-3 rounded"

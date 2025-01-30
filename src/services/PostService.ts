@@ -5,6 +5,20 @@ import slugify from "slugify";
 import { Post } from "../entities/PostEntity";
 
 export class PostService {
+    static async createPost(title: string, content: string, author: { name: string; uid: string }, tags: string[]): Promise<void> {
+        const uuid = uuidv4();
+        const slug = slugify(title, { lower: true, strict: true });
+        const createdAt = new Date();
+
+        try {
+            await setDoc(doc(db, "posts", uuid), { uuid, slug, title, content, author, tags, createdAt });
+        } catch (error) {
+            console.error("Error creando el post:", error);
+            throw error;
+        }
+    }
+
+    
     static async getAllPosts(): Promise<Post[]> {
         try {
             const postsQuery = query(collection(db, "posts"), orderBy("createdAt", "desc"));
@@ -19,18 +33,6 @@ export class PostService {
         }
     }
 
-    static async createPost(title: string, content: string, author: { name: string; uid: string }, tags: string[]): Promise<void> {
-        const uuid = uuidv4();
-        const slug = slugify(title, { lower: true, strict: true });
-        const createdAt = new Date();
-
-        try {
-            await setDoc(doc(db, "posts", uuid), { uuid, slug, title, content, author, tags, createdAt });
-        } catch (error) {
-            console.error("Error creando el post:", error);
-            throw error;
-        }
-    }
 
     static async deletePost(postId: string): Promise<void> {
         try {

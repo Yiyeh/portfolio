@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs, query, orderBy } from "firebase/firestore";
-import { db } from "../../firebaseConfig";
+
 import { NavBarBlog } from "../../components/Shared/NavBarBlog";
 import { FooterBlog } from "../../components/Shared/FooterBlog";
+import { PostService } from "../../services/PostService";
 import { Post } from "../../entities/PostEntity";
-//import { NavLink } from "react-router-dom";
-
-
-// Define el tipo para un post
 
 
 export default function BlogHome() {
@@ -15,32 +11,10 @@ export default function BlogHome() {
     
 
     useEffect(() => {
-        const fetchPosts = async () => {
-            try {
-                // Crear una consulta ordenando por el campo "createdAt" en orden descendente
-                const postsQuery = query(collection(db, "posts"), orderBy("createdAt", "desc"));
-
-                // Obtener los documentos de la colección
-                const querySnapshot = await getDocs(postsQuery);
-
-                // Mapear los documentos para estructurar los datos
-                const fetchedPosts: Post[] = querySnapshot.docs.map((doc) => ({
-                    id: doc.id,
-                    ...(doc.data() as Omit<Post, "id">),
-                }));
-
-                // Actualizar el estado con los posts ordenados
-                setPosts(fetchedPosts);
-            } catch (error) {
-                console.error("Error al obtener los posts:", error);
-            }
-        };
+        const fetchPosts = async () => PostService.getAllPosts().then((posts) => setPosts(posts));
 
         fetchPosts();
     }, []);
-
-   
- 
 
     return (
         <div className="flex flex-col min-h-screen bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200">
@@ -95,7 +69,7 @@ export default function BlogHome() {
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-6">
                             {posts.map((post) => (
-                                <BlogPostPreview key={post.id} post={post}  />
+                                <BlogPostPreview key={post.uuid} post={post}  />
                             ))}
                         </div>
                     )}
@@ -146,7 +120,7 @@ export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
                 </div>
                 <div className="flex justify-between items-center text-gray-500 text-xs mt-auto">
                     <span>Por: {post.author.name}</span>
-                    <span>{new Date(post.createdAt).toLocaleDateString()}</span>
+                    <span>{post.createdAt.toLocaleString()}</span>
                 </div>
             </div>
         </div>
