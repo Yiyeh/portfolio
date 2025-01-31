@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, orderBy, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
-import { AsideAdmin } from "../../components/Admin/SideBarAdmin";
+import { SideBarAdmin } from "../../components/Admin/SideBarAdmin";
 import { ContactMessage} from "./../../entities/ContactMessageEntity";
+import { LoadingComponent } from "../../components/Blog/LoadingComponent";
 
 
 export const AdminMessages = () => {
@@ -50,7 +51,7 @@ export const AdminMessages = () => {
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300">
-      <AsideAdmin />
+      <SideBarAdmin />
 
       <div className="flex flex-col w-full p-10 shadow-2xl gap-6">
         {/* Header */}
@@ -65,7 +66,7 @@ export const AdminMessages = () => {
               <Message key={message.id} {...message} onDelete={handleDelete} />
             ))
           ) : (
-            <p className="text-center text-gray-600">No hay mensajes aún.</p>
+            <LoadingComponent />
           )}
         </div>
       </div>

@@ -34,7 +34,7 @@ export const NavBarBlog = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-blue-400 font-bold transition text-2xl">
-          YiyehDev
+          <a href="/blog">YiyehDev</a>
         </div>
 
         {/* Botón hamburguesa (Visible en móviles) */}

@@ -29,19 +29,19 @@ export default function BlogHome() {
                             alt="Freddy Vilches (Yiyeh)"
                             className="w-24 h-24 sm:w-32 sm:h-32 rounded-full shadow-2xl ring-4 ring-blue-300 hover:ring-blue-400 transition-all duration-300 mb-6"
                         />
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-400 mb-4">
+                        <h1 className="text-3xl sm:text-3xl md:text-5xl font-extrabold text-blue-400 mb-4">
                             Bienvenidos a mi Blog
                         </h1>
-                        <p className="text-gray-700 text-lg sm:text-xl max-w-2xl mb-4">
+                        <p className="text-gray-700 text-md  max-w-2xl mb-4 text-justify">
                             ¡Hola! Soy Freddy Vilches (<span className="font-semibold text-blue-400">Yiyeh</span>), técnico nivel superior en informática y
                             desarrollador apasionado por la programación. En este espacio comparto mis proyectos, aprendizajes y reflexiones
                             sobre <span className="font-semibold text-blue-400">desarrollo web</span>, videojuegos y mucho más.
                         </p>
 
-                        <p className="text-gray-700 text-sm max-w-2xl mb-4">
+                        <code><p className="text-gray-700 text-sm max-w-2xl mb-4">
                             * Esta parte del sitio está construido con React para el frontend y Firebase con Google Authentication
                             para el backend. *
-                        </p>
+                        </p></code>
 
                         <p className="bg-yellow-100 rounded-2xl py-2 px-4 text-yellow-800 text-lg sm:text-xl max-w-2xl mb-4">
                             ⚠️ Blog en construcción ⚠️
@@ -95,7 +95,7 @@ export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
                     <h2
                         className="text-xl sm:text-2xl font-bold text-blue-400 mb-3 capitalize cursor-pointer hover:underline"
                         onClick={() =>
-                            window.location.href = `/blog/${post.slug}`
+                            window.location.href = `/blog/${post.slug + '/' + post.uuid}`
                         }
                     >
                         {post.title}

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, orderBy, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
-import { AsideAdmin } from "../../components/Admin/SideBarAdmin";
+import { SideBarAdmin } from "../../components/Admin/SideBarAdmin";
 import { Post } from "../../entities/PostEntity";
+import { LoadingComponent } from "../../components/Blog/LoadingComponent";
 
 
 
@@ -14,10 +15,10 @@ export const AdminPosts = () => {
             try {
                 // Crear una consulta ordenando por el campo "createdAt" en orden descendente
                 const postsQuery = query(collection(db, "posts"), orderBy("createdAt", "desc"));
-                
+
                 // Obtener los documentos de la colección
                 const querySnapshot = await getDocs(postsQuery);
-                
+
                 // Mapear los documentos para estructurar los datos
                 const fetchedPosts: Post[] = querySnapshot.docs.map((doc) => ({
                     id: doc.id,
@@ -29,22 +30,22 @@ export const AdminPosts = () => {
                     createdAt: doc.data().createdAt?.toDate().toLocaleString(),
                     tags: doc.data().tags
                 }));
-    
+
                 // Actualizar el estado con los posts ordenados
                 setPosts(fetchedPosts);
             } catch (error) {
                 console.error("Error al obtener los posts:", error);
             }
         };
-    
+
         fetchPosts();
     }, []);
-   
-    
+
+
 
     const handleDelete = async (id: string) => {
         // consultar si quieres eliminar
-        
+
         const confirmDelete = window.confirm("¿Estás seguro de eliminar este post?");
         if (!confirmDelete) {
             return;
@@ -61,46 +62,53 @@ export const AdminPosts = () => {
 
     return (
         <div className="flex flex-col w-full">
-          <div className="flex min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300">
-            <AsideAdmin />
-      
-            <div className="flex flex-col w-full p-20 shadow-2xl gap-4">
-              {/* Header con Publicaciones y Agregar Post */}
-              <div className="flex items-center justify-between w-full h-16 bg-white/70 backdrop-blur-lg rounded-2xl px-6 shadow-md">
-                {/* Título centrado */}
-                <h1 className="text-2xl font-bold text-blue-400 mx-auto ">
-                  Publicaciones
-                </h1>
-      
-                {/* Botón "Agregar post" al extremo derecho */}
-                <a
-                  href="/Admin/CreatePost"
-                  className="bg-blue-500 text-white text-lg font-medium rounded-2xl px-6 py-2 hover:bg-blue-600 transition duration-300"
-                >
-                  Agregar post
-                </a>
-              </div>
-      
-              {/* Mapeo de publicaciones */}
-              {posts.map((post) => (
-                <PostContainer
-                  key={post.id}
-                  id={post.id}
-                  uuid={post.uuid}
-                  slug={post.slug}
-                  title={post.title}
-                  content={post.content}
-                  author={post.author}
-                  tags={post.tags}
-                  createdAt={post.createdAt}
-                  onDelete={handleDelete} // Pasar la función de eliminación
-                />
-              ))}
+            <div className="flex min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300">
+                <SideBarAdmin />
+
+                <div className="flex flex-col w-full p-20 shadow-2xl gap-4">
+                    {/* Header con Publicaciones y Agregar Post */}
+                    <div className="flex items-center justify-between w-full h-16 bg-white/70 backdrop-blur-lg rounded-2xl px-6 shadow-md">
+                        {/* Título centrado */}
+                        <h1 className="text-2xl font-bold text-blue-400 mx-auto ">
+                            Publicaciones
+                        </h1>
+
+                        {/* Botón "Agregar post" al extremo derecho */}
+                        <a
+                            href="/Admin/CreatePost"
+                            className="bg-blue-500 text-white text-lg font-medium rounded-2xl px-6 py-2 hover:bg-blue-600 transition duration-300"
+                        >
+                            Agregar post
+                        </a>
+                    </div>
+
+                    {posts.length > 0 ? (
+                        posts.map((post) => (
+                            <PostContainer
+                                key={post.id}
+                                id={post.id}
+                                uuid={post.uuid}
+                                slug={post.slug}
+                                title={post.title}
+                                content={post.content}
+                                author={post.author}
+                                tags={post.tags}
+                                createdAt={post.createdAt}
+                                onDelete={handleDelete} // Pasar la función de eliminación
+                            />
+                        ))
+                    ) : (
+                        <div className="flex justify-center items-center h-full">
+                            <LoadingComponent />
+                        </div>
+                    )}
+
+
+                </div>
             </div>
-          </div>
         </div>
-      );
-      
+    );
+
 };
 
 interface PostProps extends Post {
@@ -141,7 +149,7 @@ export const PostContainer = ({ id, title, slug, content, author, tags, createdA
             </div>
 
             <div className="flex justify-between items-center">
-                <p className="text-gray-500 text-sm">{ createdAt.toLocaleString() }</p>
+                <p className="text-gray-500 text-sm">{createdAt.toLocaleString()}</p>
                 <div className="flex gap-2">
                     <button
                         className="bg-red-400 hover:bg-red-600 text-white font-bold py-1 px-3 rounded"

@@ -1,6 +1,6 @@
 import { Home, FileText, MessageSquare, Folder } from "lucide-react";
 
-export const AsideAdmin = () => {
+export const SideBarAdmin = () => {
   return (
     <aside className="flex flex-col items-center bg-gradient-to-br from-indigo-50 via-white to-sky-50 shadow-lg backdrop-blur-xl h-screen w-64 p-6 rounded-r-3xl">
       {/* Logo */}

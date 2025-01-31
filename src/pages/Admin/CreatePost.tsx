@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { auth } from "../../firebaseConfig";
-import { AsideAdmin } from "../../components/Admin/SideBarAdmin";
+import { SideBarAdmin } from "../../components/Admin/SideBarAdmin";
 import { PostService } from "../../services/PostService";
 import { Bounce, ToastContainer, toast } from 'react-toastify';
 
@@ -8,9 +8,12 @@ import { Bounce, ToastContainer, toast } from 'react-toastify';
 
 
 export const CreatePost = () => {
+
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [tags, setTags] = useState("");
+
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,7 +61,7 @@ export const CreatePost = () => {
   return (
     <>
       <div className="flex w-full min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300">
-        <AsideAdmin />
+        <SideBarAdmin/>
 
         <div className="flex flex-col w-full p-8 lg:p-20 gap-6">
 

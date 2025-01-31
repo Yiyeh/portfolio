@@ -34,6 +34,7 @@ export const SendContact = () => {
                 content           
             )
             notify();
+
         } catch (error) {
             console.error("Error al publicar:", error);
         }
@@ -42,6 +43,7 @@ export const SendContact = () => {
         setTitle("");
         setContent("");
         setEmail("");
+
     };
 
     return (
@@ -111,7 +113,7 @@ export const SendContact = () => {
 
                     {/* Botón de publicar */}
                     <button
-                        type="submit"
+                        type="submit" id="submit"
                         className="w-full py-3 bg-blue-100 text-blue-600 font-bold rounded-lg shadow-md hover:bg-blue-300 transition duration-300 "
                     >
                         {t("contact.send")}

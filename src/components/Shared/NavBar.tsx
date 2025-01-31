@@ -19,7 +19,7 @@ export const NavBar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="text-blue-400 font-bold transition text-2xl ml-10 ">
-          YiyehDev
+          <a href="/">YiyehDev</a>
         </div>
 
         <div className="flex w-full items-center justify-center  ml-4">

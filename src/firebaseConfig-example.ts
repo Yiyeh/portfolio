@@ -12,6 +12,8 @@ const firebaseConfig = {
   measurementId: "G-EXAMPLEMEASUREID"
 };
 
+export const adminUID = "123456789abcdefghijklmnop"; // Reemplaza con tu UID de Firebase Auth
+
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
