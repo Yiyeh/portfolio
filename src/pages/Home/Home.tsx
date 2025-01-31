@@ -5,6 +5,7 @@ import { Projects } from "../../components/Home/Projects";
 import { Footer } from "../../components/Shared/Footer";
 import { SendContact } from "../../components/Home/Contact";
 import { ScrollToTop } from "../../components/Shared/ScrollToTop";
+import { MiExxperience } from "../../components/Home/MiExperience";
 
 
 export const Home = () => {
@@ -16,6 +17,7 @@ export const Home = () => {
         <div className="sm:w-2xl md:w-3xl lg:w-6xl sm:max-w-2xl md:max-w-3xl lg:max-w-6xl px-4 sm:px-6 md:px-8">
           <section id="home" className="mt-8 sm:mt-12 md:mt-16">
             <HomeHeader />
+            <MiExxperience />
             <SkillsAndPersonal />
             <Projects />
             <SendContact/>

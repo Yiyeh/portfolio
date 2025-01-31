@@ -4,6 +4,7 @@ import { NavBarBlog } from "../../components/Shared/NavBarBlog";
 import { FooterBlog } from "../../components/Shared/FooterBlog";
 import { PostService } from "../../services/PostService";
 import { Post } from "../../entities/PostEntity";
+import ReactMarkdown from "react-markdown";
 
 
 export default function BlogHome() {
@@ -101,7 +102,7 @@ export const BlogPostPreview = ({ post }: BlogPostPreviewProps) => {
                         {post.title}
                     </h2>
                     <p className="text-sm text-gray-600 line-clamp-3 mb-4">
-                        {post.content}
+                        <ReactMarkdown className="prose prose-blue">{post.content}</ReactMarkdown>
                     </p>
                 </div>
                 <div className="flex flex-wrap gap-2 mb-4">

@@ -6,7 +6,32 @@
         "contact": "Contact",
         "blog": "Blog"
     },
-        
+    "home": {
+        "titleExperience": "## 🚀 What I Learned Building My Portfolio with React",
+        "subtitle": "This project has been a great challenge and an incredible learning experience. Basically, I started from scratch with **React**, and although at first glance it might seem like \"just HTML with Tailwind,\" the truth is that there's much more behind it.",
+        "learningTitle": "During development, I learned about:",
+    
+        "learningList": [
+            "✅ **Design practices** with `Tailwind CSS 4`.",
+            "✅ **Routing** with `React Router`.",
+            "✅ **Localization management** with `i18next`.",
+            "✅ **State management** with `useState` and `useEffect`.",
+            "✅ **Firestore integration** for storing and retrieving data.",
+            "✅ **User authentication** with `Google Authentication`.",
+            "✅ **Route protection** to restrict access to certain sections.",
+            "✅ **Markdown implementation**."
+        ],
+        "dashboardTitle": "### 🎯 An Administrative Dashboard Just for Me",
+        "dashboardDescription": "One of the most important features of this portfolio is the **admin dashboard**, accessible only to me. From there, I can:",
+        "dashboardList": [
+            "🔹 Manage a **full CRUD** for blog posts.",
+            "🔹 Review messages sent from the **\"Contact Me\"** form."
+        ],
+        "challengeTitle": "### 🔒 The Biggest Challenge: Protecting Admin Routes",
+        "challengeDescription": "What challenged me the most was implementing **route protection**, ensuring that only a user with a **specific UID** (mine 😎) could access the dashboard. After several attempts, I managed to make it work correctly.",
+        "githubText": "If you're interested in checking out the source code for this project, you can find it on **GitHub**:",
+        "githubLink": "🔗 [https://github.com/Yiyeh/portfolio](https://github.com/Yiyeh/portfolio)"
+    },
     "homeHeader": {
         "greeting": "Hello! I'm ",
         "description": "Higher-level IT technician passionate about programming and web development. My goal is to become a ",
@@ -107,6 +132,5 @@
         "messagePlaceholder": "Write your message",
         "send": "Send Message",
         "successMessage": "Message sent successfully"
-
     }
 }

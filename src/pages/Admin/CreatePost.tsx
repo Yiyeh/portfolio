@@ -3,17 +3,24 @@ import { auth } from "../../firebaseConfig";
 import { SideBarAdmin } from "../../components/Admin/SideBarAdmin";
 import { PostService } from "../../services/PostService";
 import { Bounce, ToastContainer, toast } from 'react-toastify';
-
-
-
+import MdEditor from 'react-markdown-editor-lite';
+import 'react-markdown-editor-lite/lib/index.css';
+import ReactMarkdown from 'react-markdown';
 
 export const CreatePost = () => {
-
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [tags, setTags] = useState("");
 
-  
+  // Función para manejar cambios en el editor
+  const handleEditorChange = ({ text }: { text: string }) => {
+    setContent(text);
+  };
+
+  // Función para renderizar Markdown como HTML
+  const renderHTML = (text: string) => {
+    return <ReactMarkdown>{text}</ReactMarkdown>;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,29 +30,33 @@ export const CreatePost = () => {
       return;
     }
 
-    // Convertimos las etiquetas de string a array
     const tagsArray = tags
-      .split(",") // Separar por comas
-      .map(tag => tag.trim()) // Eliminar espacios en blanco
-      .filter(tag => tag !== ""); // Filtrar vacíos
+      .split(",")
+      .map(tag => tag.trim())
+      .filter(tag => tag !== "");
 
     const notify = () => toast.success(("Entrada publicada con éxito"), {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: false,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-                transition: Bounce,
-            });
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
 
     try {
-      await PostService.createPost(title, content, {
-        name: auth.currentUser.displayName || "Anónimo",
-        uid: auth.currentUser.uid,
-      }, tagsArray);
+      await PostService.createPost(
+        title,
+        content,
+        {
+          name: auth.currentUser.displayName || "Anónimo",
+          uid: auth.currentUser.uid,
+        },
+        tagsArray
+      );
 
       notify();
       setTitle("");
@@ -57,15 +68,12 @@ export const CreatePost = () => {
     }
   };
 
-
   return (
     <>
       <div className="flex w-full min-h-screen bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300">
-        <SideBarAdmin/>
+        <SideBarAdmin />
 
         <div className="flex flex-col w-full p-8 lg:p-20 gap-6">
-
-          {/* Contenedor del formulario */}
           <div className="flex flex-col items-center justify-center w-full bg-white/70 rounded-2xl shadow-md py-30 px-6">
             <form
               onSubmit={handleSubmit}
@@ -75,7 +83,6 @@ export const CreatePost = () => {
                 Crear nueva entrada
               </h1>
 
-              {/* Campo de título */}
               <div>
                 <label htmlFor="title" className="block text-sm font-medium text-gray-600 mb-2">
                   Título
@@ -91,23 +98,18 @@ export const CreatePost = () => {
                 />
               </div>
 
-              {/* Campo de contenido */}
               <div>
                 <label htmlFor="content" className="block text-sm font-medium text-gray-600 mb-2">
                   Contenido
                 </label>
-                <textarea
-                  id="content"
-                  placeholder="Escribe el contenido aquí..."
+                <MdEditor
                   value={content}
-                  onChange={(e) => setContent(e.target.value)}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400"
-                ></textarea>
+                  onChange={handleEditorChange}
+                  renderHTML={renderHTML} // Aquí pasamos la función renderHTML
+                  style={{ height: "300px" }}
+                />
               </div>
 
-              {/* Campo de etiquetas */}
               <div>
                 <label htmlFor="tags" className="block text-sm font-medium text-gray-600 mb-2">
                   Etiquetas
@@ -122,7 +124,6 @@ export const CreatePost = () => {
                 />
               </div>
 
-              {/* Botón de publicar */}
               <button
                 type="submit"
                 className="w-full py-3 bg-blue-600 text-white font-bold rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
@@ -133,11 +134,7 @@ export const CreatePost = () => {
           </div>
         </div>
       </div>
-      <ToastContainer  />
+      <ToastContainer />
     </>
-
-  )
+  );
 };
-
-
-

@@ -13,7 +13,7 @@ Bienvenido a mi portafolio web. Este es un proyecto diseñado para mostrar mis h
 - **Base de Datos:** Firestore
 - **Almacenamiento de Archivos:** Firebase Storage
 - **Traducción:** i18next para soporte multilenguaje
-- **Despliegue:** Hostinger
+
 
 ## ✨ **Características Principales**
 
@@ -22,6 +22,8 @@ Bienvenido a mi portafolio web. Este es un proyecto diseñado para mostrar mis h
 ✅ **Administración de Contenido:** Panel de administración para gestionar publicaciones y mensajes.  
 ✅ **Optimización SEO:** URLs amigables, metaetiquetas dinámicas y carga optimizada.  
 ✅ **100% Responsivo:** Adaptado para dispositivos móviles y de escritorio.  
+✅ **Dashboard para administrador:** Un dashboard solo para el administrador. 
+✅ **Proteccíon de rutas:** las rutas para el panel de administracion están protegidas. 
 
 ## 🚀 **Instalación y Uso**
 
@@ -40,16 +42,8 @@ yarn install  # O npm install
 1. Crea un proyecto en Firebase.
 2. Habilita Authentication (Google, Email/Password, etc.).
 3. Configura Firestore y Storage.
-4. Copia las credenciales en un archivo `.env.local`.
+4. Copia las credenciales en un archivo `./src/firebaseConfig.ts`.
 
-```env
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-```
 
 ### 4️⃣ Ejecutar el proyecto en modo desarrollo
 ```bash

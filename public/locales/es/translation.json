@@ -6,7 +6,31 @@
         "contact": "Contacto",
         "blog": "Blog"
     },
-        
+    "home": {
+        "titleExperience": "## 🚀 Lo que aprendí construyendo mi portafolio con React",
+        "subtitle": "Este proyecto ha sido un gran desafío y una experiencia de aprendizaje increíble. Básicamente, comencé desde cero con **React**, y aunque a simple vista pueda parecer \"solo un HTML con Tailwind\", la verdad es que detrás hay mucho más.",
+        "learningTitle": "Durante el desarrollo, aprendí sobre:",
+        "learningList": [
+            "✅ **Practicas de diseño** con `Tailwind CSS 4`.",
+            "✅ **Manejo de rutas** con `React Router`.",
+            "✅ **Manejo de Localización** con `i18next`.",
+            "✅ **Gestión de estado** con `useState` y `useEffect`.",
+            "✅ **Integración con Firestore** para almacenar y recuperar datos.",
+            "✅ **Autenticación de usuarios** con `Google Authentication`.",
+            "✅ **Protección de rutas** para restringir el acceso a ciertas secciones.",
+            "✅ **Implementación de Markdown**."
+        ],
+        "dashboardTitle": "### 🎯 Un dashboard administrativo solo para mí",
+        "dashboardDescription": "Una de las características más importantes de este portafolio es el **admin dashboard**, accesible únicamente para mí. Desde ahí, puedo:",
+        "dashboardList": [
+            "🔹 Gestionar un **CRUD completo** para los posts del blog.",
+            "🔹 Revisar los mensajes enviados desde el formulario de **\"Contáctame\"**."
+        ],
+        "challengeTitle": "### 🔒 El mayor reto: proteger las rutas de administración",
+        "challengeDescription": "Lo que más me costó fue implementar la **protección de rutas**, asegurándome de que solo un usuario con un **UID específico** (el mío 😎) pueda acceder al dashboard. Después de varios intentos, logré que funcionara correctamente.",
+        "githubText": "Si te interesa revisar el código fuente de este proyecto, puedes encontrarlo en **GitHub**:",
+        "githubLink": "🔗 [https://github.com/Yiyeh/portfolio](https://github.com/Yiyeh/portfolio)"
+    },
     "homeHeader": {
         "greeting": "¡Hola! Soy ",
         "description": "Técnico nivel superior en Informática apasionado por la programación y desarrollo web. Mi meta es convertirme en un  ",

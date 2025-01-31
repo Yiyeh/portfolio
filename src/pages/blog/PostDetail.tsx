@@ -6,6 +6,7 @@ import { Post } from "../../entities/PostEntity";
 import { LoadingComponent } from "../../components/Blog/LoadingComponent";
 import { NavBarBlog } from "../../components/Shared/NavBarBlog";
 import { FooterBlog } from "../../components/Shared/FooterBlog";
+import ReactMarkdown from "react-markdown"; 
 
 export const PostDetail = () => {
     const { id } = useParams();
@@ -19,14 +20,14 @@ export const PostDetail = () => {
             try {
                 let postData;
 
-                if (id?.length === 20) { // Si ID es el de Firestore (cambia según el formato)
+                if (id?.length === 20) { 
                     const docRef = doc(db, "posts", id);
                     const docSnap = await getDoc(docRef);
 
                     if (docSnap.exists()) {
                         postData = { id: docSnap.id, ...docSnap.data() } as Post;
                     }
-                } else { // Si ID es el UUID generado
+                } else { 
                     const q = query(collection(db, "posts"), where("uuid", "==", id));
                     const querySnapshot = await getDocs(q);
 
@@ -41,11 +42,9 @@ export const PostDetail = () => {
                             author: docSnap.data().author,
                             tags: docSnap.data().tags,
                             createdAt: docSnap.data().createdAt?.toDate(),
-
                         } as Post;
                     }
                 }
-                // Convertir timestamp
                 setPost(postData);
 
             } catch (error) {
@@ -60,25 +59,27 @@ export const PostDetail = () => {
 
     if (loading) return (
         <>
-        <NavBarBlog/>
-        <div className="flex flex-col min-h-screen bg-blue-100 bg-opacity-50 items-center justify-center z-50">
-            <div className="bg-white rounded-xl shadow-lg max-w-3xl w-full p-6 relative items-center justify-center">
-                <LoadingComponent/>
+            <NavBarBlog />
+            <div className="flex flex-col min-h-screen bg-blue-100 bg-opacity-50 items-center justify-center z-50">
+                <div className="bg-white rounded-xl shadow-lg max-w-3xl w-full p-6 relative items-center justify-center">
+                    <LoadingComponent />
+                </div>
             </div>
-        </div>
-        <FooterBlog/>
+            <FooterBlog />
         </>
-    )
+    );
+    
     if (!post) return <p>Post no encontrado</p>;
 
     return (
         <>
-        <NavBarBlog/>
+            <NavBarBlog />
             <div className="flex flex-col min-h-screen bg-blue-100 bg-opacity-50 items-center justify-center z-50">
                 <div className="bg-white rounded-xl shadow-lg max-w-3xl w-full p-6 relative">
-
                     <h2 className="text-2xl font-bold text-blue-400 mb-4 capitalize">{post.title}</h2>
-                    <p className="text-gray-700 mb-6">{post.content}</p>
+
+                    {/* 📌 Renderizamos el contenido como Markdown */}
+                    <ReactMarkdown className="prose prose-blue mb-10">{post.content}</ReactMarkdown>
 
                     {post.tags && post.tags.length > 0 ? (
                         <div className="flex flex-wrap gap-2 mb-4">
@@ -101,7 +102,7 @@ export const PostDetail = () => {
                     </div>
                 </div>
             </div>
-            <FooterBlog/>
+            <FooterBlog />
         </>
-    )
-}
+    );
+};
