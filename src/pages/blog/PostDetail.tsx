@@ -76,6 +76,7 @@ export const PostDetail = () => {
             <NavBarBlog />
             <div className="flex flex-col min-h-screen bg-blue-100 bg-opacity-50 items-center justify-center z-50">
                 <div className="bg-white rounded-xl shadow-lg max-w-3xl w-full p-6 relative">
+                    <p className="text-xl top-4 left-4 text-blue-400 font-bold cursor-pointer mb-4 underline" onClick={() => window.history.back()}>Volver atrás</p>
                     <h2 className="text-2xl font-bold text-blue-400 mb-4 capitalize">{post.title}</h2>
 
                     {/* 📌 Renderizamos el contenido como Markdown */}

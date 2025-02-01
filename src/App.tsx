@@ -7,6 +7,7 @@ import { CreatePost } from "./pages/Admin/CreatePost";
 import { AdminMessages } from "./pages/Admin/Messages";
 import { PostDetail } from "./pages/Blog/PostDetail";
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import { UpdatePost } from "./pages/Admin/UpdatePost";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route element={<ProtectedRoute adminOnly={true} />}>
         <Route path="/Admin/Posts" element={<AdminPosts />} />
         <Route path="/Admin/CreatePost" element={<CreatePost />} />
+        <Route path="/Admin/UpdatePost/:postId" element={<UpdatePost />} />
         <Route path="/Admin/Messages" element={<AdminMessages />} />
       </Route>
     </Routes>

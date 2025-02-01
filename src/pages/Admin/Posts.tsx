@@ -157,10 +157,14 @@ export const PostContainer = ({ id, title, slug, content, author, tags, createdA
                     >
                         Eliminar
                     </button>
-                    <button className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-1 px-3 rounded">
+                    <button className="bg-blue-400 hover:bg-blue-600 text-white font-bold py-1 px-3 rounded"
+                    onClick={() => (window.location.href = `/Admin/UpdatePost/${id}`)}
+                    >
                         Editar
                     </button>
-                    <button className="bg-gray-400 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded">
+                    <button className="bg-gray-400 hover:bg-gray-600 text-white font-bold py-1 px-3 rounded"
+                        onClick={() => (window.location.href = `/Blog/${slug}/${id}`)}
+                    >
                         Ver
                     </button>
                 </div>
