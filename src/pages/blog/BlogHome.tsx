@@ -5,7 +5,7 @@ import { PostService } from "../../services/PostService";
 import { Post } from "../../entities/PostEntity";
 import ReactMarkdown from "react-markdown";
 
-export default function BlogHome() {
+export  function BlogHome() {
   const [posts, setPosts] = useState<Post[]>([]);
 
   useEffect(() => {
@@ -40,9 +40,9 @@ export default function BlogHome() {
               para el backend. *
             </code>
 
-            <p className="bg-yellow-100 rounded-2xl py-2 px-4 text-yellow-800 text-lg sm:text-xl max-w-2xl mb-4">
+            {/* <p className="bg-yellow-100 rounded-2xl py-2 px-4 text-yellow-800 text-lg sm:text-xl max-w-2xl mb-4">
               ⚠️ Blog en construcción ⚠️
-            </p>
+            </p> */}
             <p className="text-gray-600 text-sm italic">
               "El aprendizaje constante y la pasión son las claves para construir grandes cosas."
             </p>

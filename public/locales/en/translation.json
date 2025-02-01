@@ -10,7 +10,6 @@
         "titleExperience": "## 🚀 What I Learned Building My Portfolio with React",
         "subtitle": "This project has been a great challenge and an incredible learning experience. Basically, I started from scratch with **React**, and although at first glance it might seem like \"just HTML with Tailwind,\" the truth is that there's much more behind it.",
         "learningTitle": "During development, I learned about:",
-    
         "learningList": [
             "✅ **Design practices** with `Tailwind CSS 4`.",
             "✅ **Routing** with `React Router`.",
@@ -55,6 +54,10 @@
         "location": "Iquique, Chile"
     },
     "projects": {
+        "portfolio": {
+            "title": "Portfolio",
+            "description": "I built this portfolio from scratch using React and Vite, learning about routing with React Router, state management with useState and useEffect, authentication with Google Authentication, and data storage with Firestore. I implemented a blog with Markdown support and a private admin dashboard where I manage posts and contact messages. The biggest challenge was securing the admin routes, ensuring that only I have access."
+        },
         "gitGudAiming": {
             "title": "Git Gud Aiming",
             "description": "Game designed to improve aiming accuracy and speed in FPS, with interactive levels and high-quality graphics, developed in Unreal Engine 4."

@@ -2,7 +2,7 @@ import { Home, FileText, MessageSquare, Folder } from "lucide-react";
 
 export const SideBarAdmin = () => {
   return (
-    <aside className="flex flex-col items-center bg-gradient-to-br from-indigo-50 via-white to-sky-50 shadow-lg backdrop-blur-xl h-screen w-64 p-6 rounded-r-3xl">
+    <aside className="flex flex-col flex-grow  items-center bg-gradient-to-br from-indigo-50 via-white to-sky-50 shadow-lg backdrop-blur-xl h-screen w-64 p-6 rounded-r-3xl">
       {/* Logo */}
       <a href="/" className="mb-12">
         <h1 className="text-3xl font-bold text-blue-500 tracking-wide hover:text-blue-600 transition duration-300">

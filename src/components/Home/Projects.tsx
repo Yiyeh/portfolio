@@ -7,6 +7,16 @@ export const Projects = () => {
 
     <div id="projects" className="flex flex-col mx-auto gap-6 items-center justify-center ">
       <ProjectCard
+        title={t('projects.portfolio.title')}
+        src="/img/yiyehdev.png"
+        info={t('projects.portfolio.description')}
+        link="https://yiyehdev.com"
+        githubLink="https://github.com/Yiyeh/portfolio" // Añadido link a GitHub
+        linkName="YiyehDev"
+        githubName="GitHub"
+        tech={['React', 'Tailwind CSS']}
+      />
+      <ProjectCard
         title={t('projects.gitGudAiming.title')}
         src="/img/gitgud.jpg"
         info={t('projects.gitGudAiming.description')}

@@ -57,6 +57,7 @@ export const NavBar = () => {
           <NavBarItem title={t("navBar.projects")} path="#projects" toggleMenu={toggleMenu} isOpen={isOpen} />
           <NavBarItem title={t("navBar.contact")} path="#contact" toggleMenu={toggleMenu} isOpen={isOpen} />
           <NavBarItem title={t("navBar.blog")} path="/blog" toggleMenu={toggleMenu} isOpen={isOpen} />
+          
         </ul>
       </div>
     </nav>

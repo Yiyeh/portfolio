@@ -14,7 +14,8 @@ export const HomeHeader = () => {
                         className="w-32 h-32 lg:w-48 lg:h-48 md:w-32 md:h-32 rounded-full mb-4 shadow-2xl ring-4 ring-blue-300 hover:ring-blue-400 transition-all duration-300"
                     />
                     <p className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center text-gray-600 mb-2">
-                        Yiyeh
+                        
+
                     </p>
                     <p className="text-sm text-center text-gray-600 flex items-center justify-center gap-2">
                         <svg

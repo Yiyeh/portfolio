@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
-import BlogHome from "./pages/Blog/BlogHome";
-import Login from "./pages/Blog/Login";
+import { BlogHome } from "./pages/Blog/BlogHome";
+import { Login } from "./pages/Blog/Login";
 import { AdminPosts } from "./pages/Admin/Posts";
 import { CreatePost } from "./pages/Admin/CreatePost";
 import { AdminMessages } from "./pages/Admin/Messages";

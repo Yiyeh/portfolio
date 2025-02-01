@@ -88,6 +88,10 @@
         }
     },
     "projects": {
+        "portfolio": {
+            "title": "Portafolio",
+            "description": "Construí este portafolio desde cero con React y Vite, aprendiendo sobre rutas con React Router, gestión de estado con useState y useEffect, autenticación con Google Authentication y almacenamiento en Firestore. Implementé un blog con soporte para Markdown y un dashboard administrativo privado, donde gestiono posts y mensajes de contacto. El mayor reto fue proteger las rutas de administración, asegurando que solo yo pueda acceder."
+        },
         "gitGudAiming": {
             "title": "Git Gud Aiming",
             "description": "Juego diseñado para mejorar la precisión y velocidad de apuntado en FPS, con niveles interactivos y gráficos de calidad, desarrollado en Unreal Engine 4."

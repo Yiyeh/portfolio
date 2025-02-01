@@ -27,6 +27,8 @@ export const SendContact = () => {
             transition: Bounce,
         });
 
+        
+
         try {
             await ContactMessageService.createMessage(
                 name,
