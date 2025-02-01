@@ -8,7 +8,7 @@ export const Projects = () => {
     <div id="projects" className="flex flex-col mx-auto gap-6 items-center justify-center ">
       <ProjectCard
         title={t('projects.portfolio.title')}
-        src="/img/yiyehdev.png"
+        src="/img/yiyehdev.webp"
         info={t('projects.portfolio.description')}
         link="https://yiyehdev.com"
         githubLink="https://github.com/Yiyeh/portfolio" // Añadido link a GitHub
@@ -18,7 +18,7 @@ export const Projects = () => {
       />
       <ProjectCard
         title={t('projects.gitGudAiming.title')}
-        src="/img/gitgud.jpg"
+        src="/img/gitgud.webp"
         info={t('projects.gitGudAiming.description')}
         link="https://yiyeh.itch.io/gitgud-aiming"
         githubLink="" // Añadido link a GitHub
@@ -28,7 +28,7 @@ export const Projects = () => {
       />
       <ProjectCard
         title={t('projects.chileMiniapps.title')}
-        src="/img/chileminiapps.jpg"
+        src="/img/chileminiapps.webp"
         info={t('projects.chileMiniapps.description')}
         link="https://play.google.com/store/apps/details?id=com.YiyehDev.resources_chile"
         githubLink="https://github.com/Yiyeh/chile-miniapps" // Añadido link a GitHub
@@ -38,7 +38,7 @@ export const Projects = () => {
       />
       <ProjectCard
         title={t('projects.flaiteGPT.title')}
-        src="/img/flaite-gpt.jpg"
+        src="/img/flaite-gpt.webp"
         info={t('projects.flaiteGPT.description')}
         link="https://flaitegpt.netlify.app/"
         githubLink="https://github.com/Yiyeh/FlaiteGPT" // Añadido link a GitHub
@@ -48,7 +48,7 @@ export const Projects = () => {
       />
       <ProjectCard
         title={t('projects.pomodoroApp.title')}
-        src="/img/pomodoro.jpg"
+        src="/img/pomodoro.webp"
         info={t('projects.pomodoroApp.description')}
         link="https://pomodoro-yiyeh.vercel.app/"
         githubLink="https://github.com/Yiyeh/PomodoroApp" // Añadido link a GitHub
