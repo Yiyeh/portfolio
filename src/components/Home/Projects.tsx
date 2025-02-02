@@ -14,7 +14,7 @@ export const Projects = () => {
         githubLink="https://github.com/Yiyeh/portfolio" // Añadido link a GitHub
         linkName="YiyehDev"
         githubName="GitHub"
-        tech={['React', 'Tailwind CSS']}
+        tech={['React', 'Tailwind CSS','HTML', 'CSS', 'TypeScript']}
       />
       <ProjectCard
         title={t('projects.gitGudAiming.title')}

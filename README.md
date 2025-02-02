@@ -25,6 +25,7 @@ Bienvenido a mi portafolio web. Este es un proyecto diseñado para mostrar mis h
 ✅ **Dashboard para administrador:** Un dashboard solo para el administrador. 
 ✅ **Proteccíon de rutas:** las rutas para el panel de administracion están protegidas. 
 
+
 ## 🚀 **Instalación y Uso**
 
 ### 1️⃣ Clonar el repositorio
@@ -35,7 +36,7 @@ cd tu-repo
 
 ### 2️⃣ Instalar dependencias
 ```bash
-yarn install  # O npm install
+npm install
 ```
 
 ### 3️⃣ Configurar Firebase
@@ -47,12 +48,12 @@ yarn install  # O npm install
 
 ### 4️⃣ Ejecutar el proyecto en modo desarrollo
 ```bash
-yarn dev  # O npm run dev
+npm run dev
 ```
 
 ### 5️⃣ Compilar para producción
 ```bash
-yarn build  # O npm run build
+npm run build
 ```
 
 

@@ -11,7 +11,7 @@ interface Props {
   tech: string[];
 }
 
-export const ProjectCard = ({ title, src = "/img/github.jpg", info, link, linkName, githubLink, githubName, tech: text }: Props) => {
+export const ProjectCard = ({ title, src = "/img/github.webp", info, link, linkName, githubLink, githubName, tech: text }: Props) => {
   return (
     <div className="p-6 shadow-lg shadow-violet-200 rounded-xl bg-white transition-transform transform hover:scale-102 hover:shadow-xl  flex flex-col">
       {/* Título */}
