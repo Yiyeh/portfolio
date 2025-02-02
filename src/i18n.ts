@@ -9,7 +9,7 @@ i18n
   .use(initReactI18next) // Conecta i18next con React
   .init({
     fallbackLng: "es", // Idioma predeterminado (español)
-    debug: true, // Desactiva esto en producción
+    debug: false, // Desactiva esto en producción
     interpolation: {
       escapeValue: false, // React ya escapa valores automáticamente
     },

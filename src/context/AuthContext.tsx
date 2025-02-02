@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("🔄 Usuario autenticado:", currentUser);
+      //console.log("🔄 Usuario autenticado:", currentUser);
       setUser(currentUser);
       setLoading(false); // 🔹 Ya cargó el usuario
     });
