@@ -87,7 +87,7 @@ export const PostDetail = () => {
                             {post.tags.map((tag, index) => (
                                 <span
                                     key={`${tag}-${index}`}
-                                    className="px-3 py-1 text-xs font-medium text-blue-400 bg-blue-300 rounded-full"
+                                    className="px-3 py-1 text-xs font-medium text-blue-400 bg-blue-100 rounded-full"
                                 >
                                     #{tag}
                                 </span>

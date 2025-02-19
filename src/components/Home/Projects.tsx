@@ -17,6 +17,16 @@ export const Projects = () => {
         tech={['React', 'Tailwind CSS','HTML', 'CSS', 'TypeScript']}
       />
       <ProjectCard
+        title={t('projects.helldivers.title')}
+        src="/img/helldivers.webp"
+        info={t('projects.helldivers.description')}
+        link="/helldivers"
+        githubLink="" // Añadido link a GitHub
+        linkName="Play"
+        githubName="GitHub"
+        tech={['React', 'Tailwind CSS','HTML', 'TypeScript']}
+      />
+      <ProjectCard
         title={t('projects.gitGudAiming.title')}
         src="/img/gitgud.webp"
         info={t('projects.gitGudAiming.description')}

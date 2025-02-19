@@ -9,9 +9,7 @@ import { PostDetail } from "./pages/Blog/PostDetail";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { UpdatePost } from "./pages/Admin/UpdatePost";
 
-
 function App() {
- 
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -19,6 +17,7 @@ function App() {
       <Route path="/blog" element={<BlogHome />} />
       <Route path="/blog/:slug/:id" element={<PostDetail />} />
 
+      
       {/* Rutas protegidas para administradores */}
       <Route element={<ProtectedRoute adminOnly={true} />}>
         <Route path="/Admin/Posts" element={<AdminPosts />} />

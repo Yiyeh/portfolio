@@ -51,12 +51,17 @@
             "viewProjects": "View Projects",
             "contactMe": "Contact Me"
         },
-        "location": "Iquique, Chile"
+        "location": "Iquique, Chile",
+        "university": "Universidad Arturo Prat"
     },
     "projects": {
         "portfolio": {
             "title": "Portfolio",
             "description": "I built this portfolio from scratch using React and Vite, learning about routing with React Router, state management with useState and useEffect, authentication with Google Authentication, and data storage with Firestore. I implemented a blog with Markdown support and a private admin dashboard where I manage posts and contact messages. The biggest challenge was securing the admin routes, ensuring that only I have access."
+        },
+        "helldivers": {
+            "title": "Helldivers Stratagem Simulator",
+            "description": "Simulator designed to improve your speed and accuracy when entering key combinations to deploy stratagems in Helldivers. Test your reflexes and master every strategy."
         },
         "gitGudAiming": {
             "title": "Git Gud Aiming",

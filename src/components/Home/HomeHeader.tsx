@@ -17,6 +17,11 @@ export const HomeHeader = () => {
                         
 
                     </p>
+                    <p className="text-sm text-center text-gray-600 flex items-center justify-center gap-2 mb-2">
+                      
+                        <span>👨‍🎓{t("homeHeader.university")}</span>
+                        
+                    </p>
                     <p className="text-sm text-center text-gray-600 flex items-center justify-center gap-2">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
